@@ -38,10 +38,10 @@ export default function Home() {
                 style={{
                 display: "flex",
                 alignItems: "center",
-                background: "rgba(255, 255, 255, 0.05)", // Transparent frosted effect
+                background: "rgba(255, 255, 255, 0)", // Transparent frosted effect
                 borderRadius: "16px",
                 boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)", // Shadow
-                maxWidth: "1240px", // Adjust container width
+                maxWidth: "1210px", // Adjust container width
                 width: "100%",
                 padding: "2rem",
                 backdropFilter: "blur(2px)", // Frosted glass effect
@@ -361,8 +361,10 @@ export default function Home() {
                     <h3>Full Stack Developer Intern</h3>
                     <span>Purple Patch Consulting, Brisbane, Australia</span>
                     <p>
-                    • Developed front-end interfaces using <strong>WordPress</strong>, <strong>React</strong>, and <strong>Next.js</strong>.<br />
-                    • Optimized back-end systems and reduced server response times by 30%, boosting customer satisfaction by 15%.
+                    • Developed front-end interfaces using <strong>WordPress</strong>, <strong>React</strong>, and <strong>Next.js</strong> for an enhanced user experience.<br />
+                    • Optimized back-end systems by refactoring database queries and implementing caching mechanisms.<br />
+                    • Achieved a <strong>30% reduction</strong> in server response times through performance improvements.<br />
+                    • This led to a <strong>15% increase</strong> in customer satisfaction ratings and boosted overall application performance.
                     </p>
                 </div>
                 </div>
@@ -374,8 +376,11 @@ export default function Home() {
                     <h3>Backend Developer Intern</h3>
                     <span>Kamar Pelajar, Brisbane, Australia</span>
                     <p>
-                    • Integrated user-facing elements into applications, achieving a 20% increase in satisfaction ratings.<br />
-                    • Improved database response times by 40%, enhancing daily user experience for 500+ active users.
+                    • Partnered with front-end developers to integrate user-facing elements into applications, enhancing the user
+                    experience.<br />
+                    • Contributed to a 20% increase in customer satisfaction ratings due to smoother user interactions.<br />
+                    • Engineered and maintained robust backend systems with Laravel, PHP, and MySQL for reliable performance. <br />
+                    • Improved database response time by 40%, benefiting over 500 daily active users with a faster experience.     
                     </p>
                 </div>
                 </div>
@@ -387,8 +392,8 @@ export default function Home() {
                     <h3>Teaching Assistant</h3>
                     <span>University of Indonesia, Jakarta, Indonesia</span>
                     <p>
-                    • Mentored 30+ students in web, mobile, and API development, improving project grades by 25%.<br />
-                    • Delivered content for statistics courses, boosting exam scores by 20%.
+                    • Platform-based Development: Delivered web, mobile, and API content; mentored 30+ students, raising project grades by 25%, and organised 20+ support meetings.<br />
+                    • Statistics and Probability: Led content delivery, grading, and support sessions, improving student exam scores by 20%.
                     </p>
                 </div>
                 </div>
