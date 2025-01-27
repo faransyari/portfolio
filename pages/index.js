@@ -130,6 +130,7 @@ export default function Home() {
                     border: "none",
                     maxWidth: "1200px",
                     margin: "0 auto",
+                    marginTop: "10rem",
                 }}
                 >
                 <h2 style={{ fontSize: "2.5rem", color: "#82b1ff", textAlign: "center" }}>
@@ -350,7 +351,7 @@ export default function Home() {
             </HeroHighlight>
         </section>
          
-        <section id="work-experience" style={{ padding: "2rem", marginTop: "10rem" }}>
+        <section id="work" style={{ padding: "2rem", marginTop: "10rem" }}>
             <h2 style={{ textAlign: "center", fontSize: "2.5rem", color: "#82b1ff", marginBottom: "2rem" }}>Work Experience</h2>
             <div class="timeline">
                 <div class="timeline-entry">
