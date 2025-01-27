@@ -144,7 +144,7 @@ export default function Home() {
                     textAlign: "center",
                     }}
                 >
-                    I'm a{" "}
+                    I&apos;m a{" "}
                     <Highlight>
                         Software Engineer
                     </Highlight>{" "}
@@ -426,7 +426,7 @@ export default function Home() {
           <div className="frosted-container" style={{ padding: "2rem" }}>
             <h2 style={{ fontSize: "2rem", color: "#82b1ff" }}>Contact Me</h2>
             <p style={{ color: "#b0c4de" }}>
-              I'm always open to new opportunities and collaborations. Feel free to reach out to me:
+              I&apos;m always open to new opportunities and collaborations. Feel free to reach out to me:
             </p>
             <ul>
               <li>

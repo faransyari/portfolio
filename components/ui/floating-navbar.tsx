@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, JSX } from "react";
 import {
   motion,
   AnimatePresence,
@@ -27,7 +27,8 @@ export const FloatingNav = ({
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is a number
     if (typeof current === "number") {
-      let direction = current - scrollYProgress.getPrevious();
+      const previous = scrollYProgress.getPrevious();
+      const direction = previous !== undefined ? current - previous : 0;
 
       // Show the navbar when scrolling up, even at the top
       if (direction < 0 || scrollYProgress.get() < 0.05) {
