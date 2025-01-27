@@ -4,7 +4,6 @@ import { FlipWords } from "../components/ui/flip-words";
 import Image from "next/image";
 import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
 
-
 export default function Home() {
   const navItems = [
     { name: "Home", link: "#home" },
@@ -350,34 +349,54 @@ export default function Home() {
                 </div>
             </HeroHighlight>
         </section>
-
-
-        {/* Work Experiences Section */}
-        <section id="work" style={{ padding: "2rem" }}>
-            <div className="frosted-container" style={{ padding: "2rem" }}>
-                <h2 style={{ fontSize: "2rem", color: "#82b1ff" }}>Work Experiences</h2>
-                <ul>
-                    <li style={{ marginBottom: "1rem" }}>
-                    <strong style={{ color: "#82b1ff" }}>Full Stack Developer</strong> at Menuscanorder, Brisbane, Australia
-                    <p style={{ color: "#b0c4de" }}>
-                        Developed a restaurant service app for menu scanning, ordering, and payment, using CodeIgniter, PHP, JavaScript, and MySQL.
+         
+        <section id="work-experience" style={{ padding: "2rem", marginTop: "10rem" }}>
+            <h2 style={{ textAlign: "center", fontSize: "2.5rem", color: "#82b1ff", marginBottom: "2rem" }}>Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-entry">
+                <div class="timeline-dot">
+                    <span class="timeline-date">Oct 2024 - Present</span>
+                </div>
+                <div class="timeline-content">
+                    <h3>Full Stack Developer Intern</h3>
+                    <span>Purple Patch Consulting, Brisbane, Australia</span>
+                    <p>
+                    • Developed front-end interfaces using <strong>WordPress</strong>, <strong>React</strong>, and <strong>Next.js</strong>.<br />
+                    • Optimized back-end systems and reduced server response times by 30%, boosting customer satisfaction by 15%.
                     </p>
-                    </li>
-                    <li style={{ marginBottom: "1rem" }}>
-                    <strong style={{ color: "#82b1ff" }}>Software Engineer</strong> at Collectiv, Sydney, Australia
-                    <p style={{ color: "#b0c4de" }}>
-                        Built a crowd-sourced app connecting users with local events and volunteer opportunities, using Django, React, and Next.js.
+                </div>
+                </div>
+                <div class="timeline-entry">
+                <div class="timeline-dot">
+                    <span class="timeline-date">Jul 2024 - Oct 2024</span>
+                </div>
+                <div class="timeline-content">
+                    <h3>Backend Developer Intern</h3>
+                    <span>Kamar Pelajar, Brisbane, Australia</span>
+                    <p>
+                    • Integrated user-facing elements into applications, achieving a 20% increase in satisfaction ratings.<br />
+                    • Improved database response times by 40%, enhancing daily user experience for 500+ active users.
                     </p>
-                    </li>
-                    <li style={{ marginBottom: "1rem" }}>
-                    <strong style={{ color: "#82b1ff" }}>Web Developer</strong> at iSaveIt, Jakarta, Indonesia
-                    <p style={{ color: "#b0c4de" }}>
-                        Developed a financial management app for budgeting and expense tracking, using Django, Flutter, and Dart.
+                </div>
+                </div>
+                <div class="timeline-entry">
+                <div class="timeline-dot">
+                    <span class="timeline-date">Feb 2022 - Dec 2022</span>
+                </div>
+                <div class="timeline-content">
+                    <h3>Teaching Assistant</h3>
+                    <span>University of Indonesia, Jakarta, Indonesia</span>
+                    <p>
+                    • Mentored 30+ students in web, mobile, and API development, improving project grades by 25%.<br />
+                    • Delivered content for statistics courses, boosting exam scores by 20%.
                     </p>
-                    </li>
-                </ul>
+                </div>
+                </div>
             </div>
         </section>
+
+
+                
 
         {/* Projects Section */}
         <section id="projects" style={{ padding: "2rem" }}>
