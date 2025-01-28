@@ -11,6 +11,7 @@ export default function Home() {
     { name: "Work Experiences", link: "#work" },
     { name: "Projects", link: "#projects" },
     { name: "Contact", link: "#contact" },
+    // { name: "Photography", link: "/photography" }
   ];
 
   return (
@@ -495,16 +496,18 @@ export default function Home() {
             >
                 <h3 style={{ color: "#82b1ff", fontSize: "1.5rem", marginBottom: "1rem" }}>Collectiv</h3>
                 <iframe
-                            src="https://www.youtube.com/embed/oqvEPiTc-5s" // YouTube video link
-                            width="100%"
-                            height="200"
-                            allow="autoplay"
-                            style={{
-                                borderRadius: "8px",
-                                border: "none",
-                                marginBottom: "1rem",
-                            }}
-                            ></iframe>
+                    src="https://www.youtube.com/embed/oqvEPiTc-5s?controls=1&modestbranding=1&rel=0"
+                    width="100%"
+                    height="200"
+                    allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    style={{
+                        borderRadius: "8px",
+                        border: "none",
+                        marginBottom: "1rem",
+                    }}
+                ></iframe>
+
                 <p style={{ color: "#b0c4de", fontSize: "1rem" }}>
                 A crowd-sourced app connecting users with local events and volunteer opportunities.
                 </p>
@@ -561,16 +564,17 @@ export default function Home() {
             >
                 <h3 style={{ color: "#82b1ff", fontSize: "1.5rem", marginBottom: "1rem" }}>iSaveIt</h3>
                 <iframe
-                            src="https://www.youtube.com/embed/ECg8z9c7sK0" // YouTube video link
-                            width="100%"
-                            height="200"
-                            allow="autoplay"
-                            style={{
-                                borderRadius: "8px",
-                                border: "none",
-                                marginBottom: "1rem",
-                            }}
-                            ></iframe>
+                    src="https://www.youtube.com/embed/ECg8z9c7sK0?controls=1&modestbranding=1&rel=0"
+                    width="100%"
+                    height="200"
+                    allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    style={{
+                        borderRadius: "8px",
+                        border: "none",
+                        marginBottom: "1rem",
+                    }}
+                ></iframe>
                 <p style={{ color: "#b0c4de", fontSize: "1rem" }}>
                 A financial management app for budgeting and expense tracking.
                 </p>
