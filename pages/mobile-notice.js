@@ -26,7 +26,7 @@ export default function MobileNotice() {
         Desktop Only
       </h1>
       <p style={{ fontSize: "1.2rem", lineHeight: "1.8rem" }}>
-        We're sorry, but this website is not yet optimized for mobile devices.
+        We&apos;re sorry, but this website is not yet optimized for mobile devices.
         <br />
         Please open it on a desktop for the best experience.
       </p>
