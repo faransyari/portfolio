@@ -42,7 +42,7 @@ export default function Home() {
                 background: "rgba(255, 255, 255, 0)", // Transparent frosted effect
                 borderRadius: "16px",
                 boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)", // Shadow
-                maxWidth: "1210px", // Adjust container width
+                maxWidth: "1240px", // Adjust container width
                 width: "100%",
                 padding: "2rem",
                 backdropFilter: "blur(2px)", // Frosted glass effect
@@ -127,43 +127,43 @@ export default function Home() {
                     padding: "2rem 3rem",
                     background: "rgba(255, 255, 255, 0.05)", // Transparent frosted effect
                     borderRadius: "16px",
-                    boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)", // Shadow
-                    border: "none",
-                    maxWidth: "1200px",
-                    margin: "0 auto",
-                    marginTop: "10rem",
-                }}
-                >
-                <h2 style={{ fontSize: "2.5rem", color: "#82b1ff", textAlign: "center" }}>
-                    About Me
-                </h2>
-                <p
-                    style={{
-                    color: "#b0c4de",
-                    fontSize: "1.5rem",
-                    lineHeight: "2.2rem",
-                    marginTop: "1rem",
-                    textAlign: "center",
-                    }}
-                >
-                    I&apos;m a{" "}
-                    <Highlight>
-                        Software Engineer
-                    </Highlight>{" "}
-                    with a strong foundation in computer science and a deep passion for designing innovative solutions. 
-                    I hold a degree in IT from the{" "}
-                    <Highlight>
-                        University of Queensland
-                    </Highlight>{" "}
-                    and a Computer Science degree from the{" "}
-                    <Highlight>
-                        University of Indonesia
-                    </Highlight>
-                    . With extensive experience in developing robust applications, optimizing performance, and delivering 
-                    seamless user experiences, I am committed to achieving excellence in every project I undertake.
-                </p>
+                     // Shadow
+                                        border: "none",
+                                        maxWidth: "1200px",
+                                        margin: "0 auto",
+                                        marginTop: "10rem",
+                                    }}
+                                    >
+                                    <h2 style={{ fontSize: "2.5rem", color: "#82b1ff", textAlign: "center" }}>
+                                        About Me
+                                    </h2>
+                                    <p
+                                        style={{
+                                        color: "#b0c4de",
+                                        fontSize: "1.5rem",
+                                        lineHeight: "2.2rem",
+                                        marginTop: "1rem",
+                                        textAlign: "justify",
+                                        }}
+                                    >
+                                        I&apos;m a{" "}
+                                        <Highlight>
+                                            Software Engineer
+                                        </Highlight>{" "}
+                                        with a strong foundation in computer science and a deep passion for designing innovative solutions. 
+                                        I hold a degree in IT from the{" "}
+                                        <Highlight>
+                                            University of Queensland
+                                        </Highlight>{" "}
+                                        and a Computer Science degree from the{" "}
+                                        <Highlight>
+                                            University of Indonesia
+                                        </Highlight>
+                                        . With extensive experience in developing robust applications, optimizing performance, and delivering 
+                                        seamless user experiences, I am committed to achieving excellence in every project I undertake.
+                                    </p>
 
-                {/* Grid Section */}
+                                    {/* Grid Section */}
                 <div
                     style={{
                     display: "grid",

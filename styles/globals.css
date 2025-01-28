@@ -3,96 +3,47 @@
 @tailwind utilities;
 
 body {
-  margin: 0;
-  padding: 0;
+  @apply m-0 p-0 overflow-x-hidden;
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(to bottom, #000000, #000000, #000000); /* Navy gradient */
-  color: #ffffff; /* Light text for better contrast */
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-/* Frosted glass container */
-.frosted-container {
-  backdrop-filter: blur(12px); /* Frosted glass effect */
-  background: rgba(15, 31, 47, 0.6); /* Semi-transparent navy */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle frosted border */
-  border-radius: 12px; /* Smooth corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #121212;
+  background: linear-gradient(to bottom, #000000, #000000, #000000);
   color: #b0c4de;
 }
 
+.frosted-container {
+  @apply backdrop-blur-[12px] border border-opacity-20 rounded-xl;
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(15, 31, 47, 0.6);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Timeline styles */
 .timeline {
-  position: relative;
-  margin: 2rem auto;
-  padding-left: 2rem;
-  border-left: 4px solid #82b1ff;
-  max-width: 1200px;
+  @apply relative mx-auto pl-8 max-w-[1200px];
+  border-left: 4px solid theme('colors.blue.200');
 }
 
 .timeline-entry {
-  position: relative;
-  margin-bottom: 2rem;
+  @apply relative mb-8;
 }
 
 .timeline-dot {
-  position: absolute;
-  left: -10px;
-  top: 0;
-  width: 20px;
-  height: 20px;
-  background: #82b1ff;
-  border: 4px solid #fff;
-  border-radius: 50%;
+  @apply absolute left-[-10px] top-0 w-5 h-5 border-4 border-white rounded-full;
+  background: theme('colors.blue.200');
   box-shadow: 0 0 5px rgba(130, 177, 255, 0.8);
 }
 
 .timeline-date {
-  position: absolute;
-  left: 30px;
-  top: 0;
-  font-size: 0.9rem;
-  color: #82b1ff;
-  width: 200px;
-  font-size: large;
-  font-weight: bold;
+  @apply absolute left-8 top-0 w-[200px] text-lg font-bold;
+  color: theme('colors.blue.200');
 }
 
 .timeline-content {
-  margin-left: 13rem;
+  @apply ml-[13rem] p-4 rounded-lg;
   background: rgba(255, 255, 255, 0.05);
-  padding: 1rem;
-  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .timeline-content h3 {
-  color: #82b1ff;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  @apply text-xl mb-2;
+  color: theme('colors.blue.200');
 }
-
-.timeline-content span {
-  display: block;
-  color: #b0c4de;
-  margin-bottom: 0.5rem;
-}
-
-.timeline-content p {
-  margin: 0;
-  line-height: 1.6;
-}
-
-
