@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BackgroundLines } from "../components/ui/background-lines";
 
 export default function MobileNotice() {
   return (
