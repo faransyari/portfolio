@@ -14,17 +14,19 @@ export default function MobileNotice() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          textAlign: "center",
+          textAlign: "justify",
           padding: "2rem",
           background: "#121212",
           color: "#b0c4de",
+          width: "100vw", // Ensure it takes the full width of the viewport
+          boxSizing: "border-box", // Include padding in the element's total width and height
         }}
       >
         <Image
           src="/images/desktop-icon.png"
           alt="Desktop Only Icon"
-          width={150}
-          height={150}
+          width={300}
+          height={300}
           style={{ marginBottom: "2rem" }}
         />
         <h1 style={{ fontSize: "2rem", marginBottom: "1rem", color: "#82b1ff" }}>
