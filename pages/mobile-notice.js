@@ -1,12 +1,7 @@
 import Image from "next/image";
-import { BackgroundLines } from "../components/ui/background-lines";
 
 export default function MobileNotice() {
   return (
-    <BackgroundLines
-      className="relative min-w-screen overflow-hidden"
-      svgOptions={{ duration: 15 }} 
-    >
       <div
         style={{
           height: "100vh",
@@ -25,7 +20,7 @@ export default function MobileNotice() {
           alt="Desktop Only Icon"
           width={300}
           height={300}
-          style={{ marginBottom: "2rem", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", }}
+          style={{ marginBottom: "2rem"}}
         />
         <h1 style={{ fontSize: "2rem", marginBottom: "1rem", color: "#82b1ff" }}>
           Desktop Only
@@ -36,6 +31,5 @@ export default function MobileNotice() {
           Please open it on a desktop for the best experience.
         </p>
       </div>
-    </BackgroundLines>
   );
 }
