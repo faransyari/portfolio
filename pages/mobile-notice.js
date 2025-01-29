@@ -4,8 +4,8 @@ import { BackgroundLines } from "../components/ui/background-lines";
 export default function MobileNotice() {
   return (
     <BackgroundLines
-      className="relative min-h-screen overflow-hidden"
-      svgOptions={{ duration: 15 }} // Customize animation duration as needed
+      className="relative min-w-screen overflow-hidden"
+      svgOptions={{ duration: 15 }} 
     >
       <div
         style={{
@@ -18,8 +18,6 @@ export default function MobileNotice() {
           padding: "2rem",
           background: "#121212",
           color: "#b0c4de",
-          width: "100vw", // Ensure it takes the full width of the viewport
-          boxSizing: "border-box", // Include padding in the element's total width and height
         }}
       >
         <Image
@@ -27,7 +25,7 @@ export default function MobileNotice() {
           alt="Desktop Only Icon"
           width={300}
           height={300}
-          style={{ marginBottom: "2rem" }}
+          style={{ marginBottom: "2rem", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", }}
         />
         <h1 style={{ fontSize: "2rem", marginBottom: "1rem", color: "#82b1ff" }}>
           Desktop Only
