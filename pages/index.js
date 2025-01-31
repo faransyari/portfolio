@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <BackgroundLines
       className="relative min-h-screen overflow-hidden"
-      svgOptions={{ duration: 15 }} // Customize animation duration as needed
+      svgOptions={{ duration: 15 }} 
     >
       <FloatingNav navItems={navItems} />
       <main className="relative z-10" style={{ padding: "2rem" }}>
@@ -53,14 +53,13 @@ export default function Home() {
                 {/* Profile Picture */}
                 <div style={{ marginRight: "2rem", flexShrink: 0 }}>
                 <Image
-                    src="/images/profile.jpg" // Path to your image
+                    src="/images/profile.jpg" 
                     alt="Profile Picture"
                     width={400} // Adjust width for portrait
                     height={800} // Adjust height for portrait
                     style={{
-                    objectFit: "cover", // Ensure the image fits well
-                    boxShadow: "0 4px 8px rgba(0, 0, 0, 1)", // Optional shadow
-                    //round corners
+                    objectFit: "cover",
+                    boxShadow: "0 4px 8px rgba(0, 0, 0, 1)",
                     borderRadius: "10px",
                     }}
                 />
@@ -71,8 +70,8 @@ export default function Home() {
                 <p
                     style={{
                     color: "#b0c4de",
-                    fontSize: "2.5rem", // Increased font size
-                    lineHeight: "4rem", // Improved readability
+                    fontSize: "2.5rem",
+                    lineHeight: "4rem", 
                     }}
                 >
                     My name is{" "}
@@ -80,7 +79,7 @@ export default function Home() {
                     style={{
                         fontWeight: "bold",
                         color: "#82b1ff",
-                        fontSize: "2.8rem", // Larger for emphasis
+                        fontSize: "2.8rem",
                     }}
                     >
                     Firlandi Althaf Ansyari
@@ -104,7 +103,7 @@ export default function Home() {
                     background: "linear-gradient(90deg, #4facfe, #00f2fe)",
                     color: "#fff",
                     border: "none",
-                    fontSize: "1.2rem", // Slightly larger button text
+                    fontSize: "1.2rem",
                     cursor: "pointer",
                     }}
                 >
@@ -127,43 +126,42 @@ export default function Home() {
                     padding: "2rem 3rem",
                     background: "rgba(255, 255, 255, 0.05)", // Transparent frosted effect
                     borderRadius: "16px",
-                     // Shadow
-                                        border: "none",
-                                        maxWidth: "1200px",
-                                        margin: "0 auto",
-                                        marginTop: "10rem",
-                                    }}
-                                    >
-                                    <h2 style={{ fontSize: "2.5rem", color: "#82b1ff", textAlign: "center" }}>
-                                        About Me
-                                    </h2>
-                                    <p
-                                        style={{
-                                        color: "#b0c4de",
-                                        fontSize: "1.5rem",
-                                        lineHeight: "2.2rem",
-                                        marginTop: "1rem",
-                                        textAlign: "justify",
-                                        }}
-                                    >
-                                        I&apos;m a{" "}
-                                        <Highlight>
-                                            Software Engineer
-                                        </Highlight>{" "}
-                                        with a strong foundation in computer science and a deep passion for designing innovative solutions. 
-                                        I hold a degree in IT from the{" "}
-                                        <Highlight>
-                                            University of Queensland
-                                        </Highlight>{" "}
-                                        and a Computer Science degree from the{" "}
-                                        <Highlight>
-                                            University of Indonesia
-                                        </Highlight>
-                                        . With extensive experience in developing robust applications, optimizing performance, and delivering 
-                                        seamless user experiences, I am committed to achieving excellence in every project I undertake.
-                                    </p>
+                    border: "none",
+                    maxWidth: "1200px",
+                    margin: "0 auto",
+                    marginTop: "10rem",
+                    }}
+                    >
+                    <h2 style={{ fontSize: "2.5rem", color: "#82b1ff", textAlign: "center" }}>
+                        About Me
+                    </h2>
+                    <p
+                        style={{
+                        color: "#b0c4de",
+                        fontSize: "1.5rem",
+                        lineHeight: "2.2rem",
+                        marginTop: "1rem",
+                        textAlign: "justify",
+                        }}
+                    >
+                        I&apos;m a{" "}
+                        <Highlight>
+                            Software Engineer
+                        </Highlight>{" "}
+                        with a strong foundation in computer science and a deep passion for designing innovative solutions. 
+                        I hold a degree in IT from the{" "}
+                        <Highlight>
+                            University of Queensland
+                        </Highlight>{" "}
+                        and a Computer Science degree from the{" "}
+                        <Highlight>
+                            University of Indonesia
+                        </Highlight>
+                        . With extensive experience in developing robust applications, optimizing performance, and delivering 
+                        seamless user experiences, I am committed to achieving excellence in every project I undertake.
+                    </p>
 
-                                    {/* Grid Section */}
+                    {/* Grid Section */}
                 <div
                     style={{
                     display: "grid",
@@ -446,7 +444,7 @@ export default function Home() {
             >
                 <h3 style={{ color: "#82b1ff", fontSize: "1.5rem", marginBottom: "1rem" }}>Menuscanorder</h3>
                 <Image
-                src="/images/menuscanorder.png" // Replace with your image path
+                src="/images/menuscanorder.png"
                 alt="Menuscanorder Project"
                 width={400}
                 height={200}
@@ -470,7 +468,7 @@ export default function Home() {
                 <Image src="/images/mysql-icon.png" alt="MySQL" width={30} height={30} />
                 </div>
                 <a
-                href="https://github.com/faransyari/menuscanorder" // Replace with actual repo link
+                href="https://github.com/faransyari/menuscanorder"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -525,7 +523,7 @@ export default function Home() {
                 <Image src="/images/nextjs-icon.png" alt="Next.js" width={30} height={30} />
                 </div>
                 <a
-                href="https://github.com/The-Mud-Koalas/collectiv-fe-mobile" // Replace with actual repo link
+                href="https://github.com/The-Mud-Koalas/collectiv-fe-mobile"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -538,7 +536,7 @@ export default function Home() {
                 View Repository
                 </a><br />
                 <a
-                href="https://collectiv-fe-web.vercel.app/" // Replace with actual repo link
+                href="https://collectiv-fe-web.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
