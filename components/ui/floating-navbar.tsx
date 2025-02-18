@@ -7,7 +7,6 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 
 export const FloatingNav = ({
   navItems,
@@ -21,16 +20,13 @@ export const FloatingNav = ({
   className?: string;
 }) => {
   const { scrollYProgress } = useScroll();
-
   const [visible, setVisible] = useState(false);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
-    // Check if current is a number
     if (typeof current === "number") {
       const previous = scrollYProgress.getPrevious();
       const direction = previous !== undefined ? current - previous : 0;
 
-      // Show the navbar when scrolling up, even at the top
       if (direction < 0 || scrollYProgress.get() < 0.05) {
         setVisible(true);
       } else {
@@ -38,6 +34,19 @@ export const FloatingNav = ({
       }
     }
   });
+
+  // ✅ Function to handle smooth scrolling
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 60, // Adjust offset if you have a fixed navbar
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <AnimatePresence mode="wait">
@@ -49,7 +58,7 @@ export const FloatingNav = ({
           }}
           animate={{
             y: 0,
-            opacity: 1,
+            opacity: 0.9,
           }}
           exit={{
             opacity: 0,
@@ -59,20 +68,20 @@ export const FloatingNav = ({
             duration: 0.3,
           }}
           className={cn(
-            "fixed top-4 inset-x-0 mx-auto max-w-fit z-[9999] border border-[rgba(50,50,50,0.8)] dark:border-[rgba(20,20,20,0.9)] rounded-full bg-neutral-900/90 backdrop-blur-md shadow-lg py-4 px-10 flex items-center justify-center space-x-8"
-,
+            "fixed top-4 inset-x-0 mx-auto max-w-fit z-[9999] rounded-full bg-neutral-900/90 backdrop-blur-md shadow-lg py-4 px-10 flex items-center justify-center space-x-8",
             className
           )}
         >
           {navItems.map((navItem, idx) => (
-            <Link
+            <a
               key={idx}
               href={navItem.link}
-              className="text-sm text-white hover:text-blue-400 transition"
+              onClick={(e) => handleNavClick(e, navItem.link.substring(1))}
+              className="text-sm text-white hover:text-blue-400 transition cursor-pointer"
             >
               {navItem.icon && <span className="mr-1">{navItem.icon}</span>}
               {navItem.name}
-            </Link>
+            </a>
           ))}
         </motion.div>
       )}
