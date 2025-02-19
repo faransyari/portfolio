@@ -31,19 +31,28 @@ export default function HeroSection() {
         }}
       >
         {/* Profile Picture */}
-        <div style={{ marginRight: "2rem", flexShrink: 0 }}>
-          <Image
-            src="/images/profile.jpg"
+        <div style={{ 
+            marginRight: "2rem", 
+            flexShrink: 0, 
+            width: "400px", 
+            height: "750px", 
+            position: "relative" // Ensure positioning works correctly
+        }}>
+        <Image
+            src="/images/profile1.png"
             alt="Profile Picture"
-            width={400}
-            height={800}
+            width={350}
+            height={750} // Ensure the height matches the div
             style={{
-              objectFit: "cover",
-              boxShadow: "0 4px 8px rgba(0, 0, 0, 1)",
-              borderRadius: "10px",
+            objectFit: "cover",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+            borderRadius: "10px",
+            WebkitMaskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%)",
+            maskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%)",
             }}
-          />
+        />
         </div>
+
 
         {/* Text Section */}
         <div>
