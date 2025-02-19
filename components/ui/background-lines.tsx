@@ -1,4 +1,4 @@
-"use client";
+                                                                                          "use client";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import React from "react";
@@ -68,27 +68,26 @@ const SVG = ({
   ];
 
   const colors = [
-    "#46A5CA",
-    "#8C2F2F",
-    "#4FAE4D",
-    "#D6590C",
-    "#811010",
-    "#247AFB",
-    "#A534A0",
-    "#A8A438",
-    "#D6590C",
-    "#46A29C",
-    "#670F6D",
-    "#D7C200",
-    "#59BBEB",
-    "#504F1C",
-    "#55BC54",
-    "#4D3568",
-    "#9F39A5",
-    "#363636",
-    "#860909",
-    "#6A286F",
-    "#604483",
+    "#0000FF",
+    "#1E90FF",
+    "#4169E1",
+    "#6495ED",
+    "#87CEFA",
+    "#8A2BE2",
+    "#9400D3",
+    "#9932CC",
+    "#BA55D3",
+    "#DA70D6",
+    "#9370DB",
+    "#8B008B",
+    "#800080",
+    "#D8BFD8",
+    "#DDA0DD",
+    "#EE82EE",
+    "#FF00FF",
+    "#E6E6FA",
+    "#C71585",
+    "#DB7093",
   ];
   return (
     <motion.svg

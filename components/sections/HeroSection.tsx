@@ -15,41 +15,39 @@ export default function HeroSection() {
       }}
     >
       <div
-        className="frosted-container"
+        className="container"
         style={{
           display: "flex",
           alignItems: "center",
-          background: "rgba(255, 255, 255, 0)",
+          background: "transparent",
           borderRadius: "16px",
           boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)",
           maxWidth: "1240px",
           width: "100%",
           padding: "2rem",
-          backdropFilter: "blur(2px)",
-          WebkitBackdropFilter: "blur(2px)",
           border: "none",
         }}
       >
         {/* Profile Picture */}
         <div style={{ 
-            marginRight: "2rem", 
-            flexShrink: 0, 
-            width: "400px", 
-            height: "750px", 
-            position: "relative"
+        marginRight: "2rem", 
+        flexShrink: 0, 
+        width: "400px", 
+        height: "750px", 
+        position: "relative"
         }}>
         <Image
-            src="/images/profile.png"
-            alt="Profile Picture"
-            width={350}
-            height={750}
-            style={{
-            objectFit: "cover",
-            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-            borderRadius: "10px",
-            WebkitMaskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%)",
-            maskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%)",
-            }}
+        src="/images/profile.png"
+        alt="Profile Picture"
+        width={350}
+        height={750}
+        style={{
+        objectFit: "cover",
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+        borderRadius: "10px",
+        WebkitMaskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%)",
+        maskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%)",
+        }}
         />
         </div>
 
@@ -57,63 +55,63 @@ export default function HeroSection() {
         {/* Text Section */}
         <div>
           <p
-            style={{
-              color: "#b0c4de",
-              fontSize: "2.5rem",
-              lineHeight: "4rem",
-            }}
+        style={{
+          color: "#b0c4de",
+          fontSize: "2.5rem",
+          lineHeight: "4rem",
+        }}
           >
-            My name is{" "}
-            <span
-              style={{
-                fontWeight: "bold",
-                color: "#82b1ff",
-                fontSize: "2.8rem",
-              }}
-            >
-              Firlandi Althaf Ansyari
-            </span>
-            .
-            <span style={{ display: "inline-block" }}>
-              <FlipWords
-                words={["Full Stack Developer", "Tech Enthusiast", "Data Engineer"]}
-                duration={3000}
-                className="font-bold text-blue-400"
-              />
-            </span>
+        My name is{" "}
+        <span
+          style={{
+        fontWeight: "bold",
+        color: "#82b1ff",
+        fontSize: "2.8rem",
+          }}
+        >
+          Firlandi Althaf Ansyari
+        </span>
+        .
+        <span style={{ display: "inline-block" }}>
+          <FlipWords
+        words={["Full Stack Developer", "Tech Enthusiast", "Data Engineer"]}
+        duration={3000}
+        className="font-bold text-blue-400"
+          />
+        </span>
           </p>
 
           {/* Social Media Buttons */}
           <div style={{ display: "flex", gap: "1rem", marginTop: "2rem" }}>
-            <a
-              href="https://linkedin.com/in/firlandi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-button"
-              style={{ backgroundColor: "#0077b5" }} // LinkedIn blue background color
-            >
-              <img src="/images/linkedin-icon.png" alt="LinkedIn" width={30} height={30} />
-            </a>
+        <a
+          href="https://linkedin.com/in/firlandi"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-button"
+          style={{ backgroundColor: "#0077b5" }} 
+        >
+          <img src="/images/linkedin-icon.png" alt="LinkedIn" width={30} height={30} />
+        </a>
 
-            <a
-              href="https://github.com/faransyari"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-button"
-              style={{ backgroundColor: "#333" }} // GitHub dark background color
-            >
-              <img src="/images/github-icon.png" alt="GitHub" width={30} height={30} />
-            </a>
+        <a
+          href="https://github.com/faransyari"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-button"
+          style={{ backgroundColor: "#333" }} 
+        >
+          <img src="/images/github-icon.png" alt="GitHub" width={30} height={30} />
+        </a>
 
-            <a
-              href="https://instagram.com/firlandiansyari"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-button"
-              style={{ backgroundColor: "#E1306C" }} // Instagram pink background color
-            >
-              <img src="/images/instagram-icon.png" alt="Instagram" width={30} height={30} />
-            </a>
+        <a
+          href="https://instagram.com/firlandiansyari"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-button"
+          style={{ backgroundColor: "#E1306C" }}
+        >
+          <img src="/images/instagram-icon.png" alt="Instagram" width={30} height={30} />
+        </a>
           </div>
         </div>
       </div>
