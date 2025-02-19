@@ -39,22 +39,22 @@ export default function HeroSection() {
           style={{ 
             marginRight: "2rem", 
             flexShrink: 0, 
-            width: "400px", 
-            height: "750px", 
-            position: "relative"
+            width: "250px", 
+            height: "250px", 
+            position: "relative",
+            borderRadius: "50%",
+            overflow: "hidden",
+            border: "5px solid #82b1ff"
           }}
         >
           <Image
-            src="/images/profile.png"
+            src="/images/profile.jpg"
             alt="Profile Picture"
-            width={350}
-            height={750}
+            width={250}
+            height={250}
             style={{
               objectFit: "cover",
               boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-              borderRadius: "10px",
-              WebkitMaskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%)",
-              maskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%)",
             }}
           />
         </div>
