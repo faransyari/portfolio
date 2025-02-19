@@ -36,13 +36,13 @@ export default function HeroSection() {
             flexShrink: 0, 
             width: "400px", 
             height: "750px", 
-            position: "relative" // Ensure positioning works correctly
+            position: "relative"
         }}>
         <Image
-            src="/images/profile1.png"
+            src="/images/profile.png"
             alt="Profile Picture"
             width={350}
-            height={750} // Ensure the height matches the div
+            height={750}
             style={{
             objectFit: "cover",
             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
