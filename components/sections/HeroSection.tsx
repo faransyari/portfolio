@@ -61,12 +61,10 @@ export default function HeroSection() {
 
 
         {/* Text Section */}
-        <div
-          data-aos="fade-left"
-
-        
+        <div 
         >
           <p
+            data-aos="fade-left"
             style={{
               color: "#b0c4de",
               fontSize: "2.5rem",
