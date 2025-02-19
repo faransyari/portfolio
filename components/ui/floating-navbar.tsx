@@ -35,14 +35,13 @@ export const FloatingNav = ({
     }
   });
 
-  // ✅ Function to handle smooth scrolling
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
     const targetElement = document.getElementById(targetId);
     
     if (targetElement) {
       window.scrollTo({
-        top: targetElement.offsetTop - 60, // Adjust offset if you have a fixed navbar
+        top: targetElement.offsetTop - 60, 
         behavior: "smooth",
       });
     }
@@ -53,8 +52,8 @@ export const FloatingNav = ({
       {visible && (
         <motion.div
           initial={{
-            opacity: 0,
-            y: -100,
+            opacity: 0.7,
+            y: 0,
           }}
           animate={{
             y: 0,
@@ -68,7 +67,7 @@ export const FloatingNav = ({
             duration: 0.3,
           }}
           className={cn(
-            "fixed top-4 inset-x-0 mx-auto max-w-fit z-[9999] rounded-full bg-neutral-900/90 backdrop-blur-md shadow-lg py-4 px-10 flex items-center justify-center space-x-8",
+            "fixed top-4 inset-x-0 mx-auto max-w-fit z-[9999] rounded-full bg-neutral-900/90 backdrop-blur-md shadow-lg py-4 px-10 flex items-center justify-center space-x-20",
             className
           )}
         >
