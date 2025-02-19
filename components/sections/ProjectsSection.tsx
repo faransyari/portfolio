@@ -8,6 +8,7 @@ export default function ProjectsSection() {
             }}>
         <div
             className="frosted-container"
+            data-aos="fade-up"
             style={{
             padding: "2rem",
             background: "rgba(255, 255, 255, 0.05)",

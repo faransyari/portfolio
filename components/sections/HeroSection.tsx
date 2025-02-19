@@ -1,9 +1,14 @@
 import { FlipWords } from "../ui/flip-words";
 import Image from "next/image";
+import useAos from "../hooks/useAos"; // Import the AOS hook
+
 
 export default function HeroSection() {
+  // Initialize AOS
+  useAos();
   return (
     <section
+
       id="home"
       style={{
         height: "100vh",
@@ -29,60 +34,73 @@ export default function HeroSection() {
         }}
       >
         {/* Profile Picture */}
-        <div style={{ 
-        marginRight: "2rem", 
-        flexShrink: 0, 
-        width: "400px", 
-        height: "750px", 
-        position: "relative"
-        }}>
-        <Image
-        src="/images/profile.png"
-        alt="Profile Picture"
-        width={350}
-        height={750}
-        style={{
-        objectFit: "cover",
-        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-        borderRadius: "10px",
-        WebkitMaskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%)",
-        maskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%)",
-        }}
-        />
+        <div 
+          data-aos="fade-right"
+          style={{ 
+            marginRight: "2rem", 
+            flexShrink: 0, 
+            width: "400px", 
+            height: "750px", 
+            position: "relative"
+          }}
+        >
+          <Image
+            src="/images/profile.png"
+            alt="Profile Picture"
+            width={350}
+            height={750}
+            style={{
+              objectFit: "cover",
+              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+              borderRadius: "10px",
+              WebkitMaskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%)",
+              maskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%)",
+            }}
+          />
         </div>
 
 
         {/* Text Section */}
-        <div>
-          <p
-        style={{
-          color: "#b0c4de",
-          fontSize: "2.5rem",
-          lineHeight: "4rem",
-        }}
-          >
-        My name is{" "}
-        <span
-          style={{
-        fontWeight: "bold",
-        color: "#82b1ff",
-        fontSize: "2.8rem",
-          }}
+        <div
+          data-aos="fade-left"
+
+        
         >
-          Firlandi Althaf Ansyari
-        </span>
-        .
-        <span style={{ display: "inline-block" }}>
-          <FlipWords
-        words={["Full Stack Developer", "Tech Enthusiast", "Data Engineer"]}
-        duration={3000}
-        className="font-bold text-blue-400"
-          />
-        </span>
+          <p
+            style={{
+              color: "#b0c4de",
+              fontSize: "2.5rem",
+              lineHeight: "4rem",
+            }}
+          >
+            My name is{" "}
+            <span
+              style={{
+            fontWeight: "bold",
+            color: "#82b1ff",
+            fontSize: "2.8rem",
+              }}
+            >
+              Firlandi Althaf Ansyari
+            </span>
+            .
+            <span style={{ display: "inline-block" }}>
+              <FlipWords
+            words={["Full Stack Developer", "Tech Enthusiast", "Data Engineer"]}
+            duration={3000}
+            className="font-bold text-blue-400"
+              />
+            </span>
           </p>
 
           {/* Social Media Buttons */}
-          <div style={{ display: "flex", gap: "1rem", marginTop: "2rem" }}>
+          <div 
+            data-aos="fade-up"
+            style={{ 
+              display: "flex", 
+              gap: "1rem", 
+              marginTop: "2rem",
+              }}>
         <a
           href="https://linkedin.com/in/firlandi"
           target="_blank"

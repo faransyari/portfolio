@@ -6,6 +6,8 @@ export default function AboutSection() {
     <section id="about" style={{ padding: "2rem", height: "100vh" }}>
             <HeroHighlight containerClassName="bg-transparent text-white">
                 <div
+                data-aos="fade-up"
+
                 className="frosted-container"
                 style={{
                     padding: "2rem 3rem",

@@ -1,6 +1,7 @@
 export default function WorkSection() {
     return (
-      <section id="work" style={{ padding: "2rem", height:"100vh" }}>
+      <section         data-aos="fade-up"
+      id="work" style={{ padding: "2rem", height:"100vh" }}>
         <h2
           style={{
             textAlign: "center",
@@ -11,7 +12,8 @@ export default function WorkSection() {
         >
           Work Experience
         </h2>
-        <div className="timeline">
+        <div className="timeline"
+        >
           {/* Full Stack Developer Intern */}
           <div className="timeline-entry">
             <div className="timeline-dot">
