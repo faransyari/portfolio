@@ -13,8 +13,11 @@ export default function HeroSection() {
     >
       {/* Animated Background Blobs */}
       <div className="absolute w-[600px] h-[600px] bg-blue-500 opacity-30 rounded-full blur-3xl animate-pulse-slow top-[-150px] left-[-200px] z-0" />
-      <div className="absolute w-[400px] h-[400px] bg-purple-500 opacity-20 rounded-full blur-2xl animate-ping top-[50%] right-[-150px] z-0" />
-      <div className="absolute w-[300px] h-[300px] bg-pink-500 opacity-20 rounded-full blur-2xl animate-bounce-slow bottom-[-100px] left-[30%] z-0" />
+      <div className="absolute w-[400px] h-[400px] bg-purple-500 opacity-20 rounded-full blur-2xl animate-pulse-slow top-[50%] right-[-150px] z-0" />
+      <div className="absolute w-[300px] h-[300px] bg-pink-500 opacity-20 rounded-full blur-2xl animate-pulse-slow bottom-[-100px] left-[30%] z-0" />
+      <div className="absolute w-[500px] h-[500px] bg-blue-400 opacity-10 rounded-full blur-3xl animate-pulse-slow bottom-[700px] right-[10%] z-0" />
+
+      {/* Content Section */}
 
       <div className="relative z-10 max-w-6xl w-full mx-auto flex flex-col md:flex-row items-center justify-center gap-10">
         {/* Profile Picture */}
@@ -34,6 +37,8 @@ export default function HeroSection() {
             style={{
               background:
                 "radial-gradient(circle, transparent 60%, rgba(17,24,39,0.8) 100%)",
+              boxShadow:
+                "0 0 0 2px rgba(59, 130, 246, 0.5), 0 0 10px rgba(59, 130, 246, 0.3)",
             }}
           />
         </div>
@@ -83,7 +88,7 @@ export default function HeroSection() {
             <a
               href="/resume.pdf"
               download
-              className="mt-6 inline-block px-6 py-3 border-2 border-blue-400 bg-transparent text-blue-400 font-bold rounded-xl shadow-lg hover:bg-blue-400 hover:text-white hover:scale-105 transform transition duration-300"
+              className="mt-6 inline-block px-6 py-3 border-2 border-purple-400 bg-transparent text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 font-bold rounded-xl shadow-lg hover:bg-blue-400 hover:text-purple-400 hover:scale-105 transform transition duration-300"
             >
               Resume
             </a>

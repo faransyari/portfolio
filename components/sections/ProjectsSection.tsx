@@ -37,7 +37,7 @@ export default function ProjectsSection() {
     return (
         <section id="projects" className="bg-gray-950 text-white py-20 font-roboto">
             <div className="max-w-6xl mx-auto px-6" data-aos="fade-up">
-                <h2 className="text-4xl font-bold text-blue-400 text-center mb-12 font-roboto">Projects</h2>
+                <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-center mb-12 font-roboto">Projects</h2>
 
                 <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                     {projects.map((project, i) => (

@@ -5,17 +5,17 @@ export default function AboutSection() {
     return (
         <section
             id="about"
-            className="py-5 bg-gray-950 text-white font-['Roboto']"
+            className="py-5 bg-gray-950 text-white"
         >
             <div
                 data-aos="fade-up"
                 className="max-w-6xl mx-auto px-5 sm:px-10 lg:px-14"
             >
                 <div className="rounded-3xl p-10 md:p-16 mt-20">
-                    <h2 className="text-4xl md:text-5xl font-semibold text-center text-blue-400 mb-6">
+                    <h2 className="font-roboto text-4xl md:text-5xl font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mb-6">
                         About Me
                     </h2>
-                    <p className="text-lg md:text-xl text-slate-300 leading-relaxed text-center">
+                    <p className="text-lg md:text-xl text-slate-300 leading-relaxed text-center font-roboto">
                         Software Engineer with dual degrees from the
                         <span className="text-blue-300 font-semibold"> University of Queensland</span> and
                         <span className="text-blue-300 font-semibold"> University of Indonesia</span>. Specialized in fullstack development, mobile development, and data engineering.
@@ -24,7 +24,7 @@ export default function AboutSection() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12">
                         {/* Programming Languages */}
                         <div>
-                            <h3 className="text-xl font-semibold text-blue-400 text-center mb-6">
+                            <h3 className="text-xl font-semibold text-blue-400 text-center mb-6 font-roboto">
                                 Programming Languages
                             </h3>
                             <div className="grid grid-cols-3 gap-4 mt-6">
@@ -86,7 +86,7 @@ export default function AboutSection() {
 
                         {/* Frameworks & Libraries */}
                         <div>
-                            <h3 className="text-xl font-semibold text-blue-400 text-center mb-6">
+                            <h3 className="text-xl font-semibold text-blue-400 text-center mb-6 font-roboto">
                                 Frameworks & Libraries
                             </h3>
                             <div className="grid grid-cols-3 gap-4 mt-6">
@@ -144,7 +144,7 @@ export default function AboutSection() {
 
                         {/* Web & Databases */}
                         <div>
-                            <h3 className="text-xl font-semibold text-blue-400 text-center mb-6">
+                            <h3 className="text-xl font-semibold text-blue-400 text-center mb-6 font-roboto">
                                 Web & Databases
                             </h3>
                             <div className="grid grid-cols-3 gap-4 mt-6">
