@@ -1,83 +1,84 @@
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+import { BriefcaseIcon } from 'lucide-react';
+
 export default function WorkSection() {
-    return (
-      <section         data-aos="fade-up"
-      id="work" style={{ padding: "2rem", height:"100vh" }}>
-        <h2
-          style={{
-            textAlign: "center",
-            fontSize: "2.5rem",
-            color: "#82b1ff",
-            marginTop: "3rem",
-          }}
-        >
+  const experiences = [
+    {
+      title: 'Full Stack Developer Intern',
+      company: 'Purple Patch Consulting | Brisbane, Australia',
+      date: 'Oct 2024 - Dec 2024',
+      points: [
+        'Developed a real-time analytics dashboard using React and Next.js for consultants to track key metrics.',
+        'Optimized database queries, implemented Redis caching, and improved data visualization, reducing load times by 30% and leading to a 15% increase in customer satisfaction.'
+      ]
+    },
+    {
+      title: 'Backend Developer Intern',
+      company: 'Kamar Pelajar | Brisbane, Australia',
+      date: 'Jul 2024 - Oct 2024',
+      points: [
+        'Built a property dashboard with booking and listing management, improving occupancy tracking and reservations.',
+        'Integrated front-end booking features with a Laravel and MySQL backend, enhancing accuracy and efficiency.',
+        'Developed an asynchronous job processing system using Laravel Queues, handling 100+ daily transactions and improving booking request speeds by 40% for 500+ active users.'
+      ]
+    },
+    {
+      title: 'Teaching Assistant',
+      company: 'University of Indonesia | Jakarta, Indonesia',
+      date: 'Feb 2022 - Dec 2022',
+      points: [
+        'Platform-based Development: Mentored 30+ students, improved grades by 25%.',
+        'Statistics and Probability: Led support and grading; raised exam scores by 20%.'
+      ]
+    }
+  ];
+
+  return (
+    <section
+      id="work"
+      className="relative min-h-screen py-24 text-white bg-gray-950 overflow-hidden"
+    >
+      <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-gray-950 to-transparent z-0" />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-4">
+        <h2 className="text-4xl md:text-5xl font-semibold text-center text-blue-400 mb-10">
           Work Experience
         </h2>
-        <div className="timeline"
-        >
-          {/* Full Stack Developer Intern */}
-          <div className="timeline-entry">
-            <div className="timeline-dot">
-              <span className="timeline-date">Oct 2024 - Present</span>
-            </div>
-            <div className="timeline-content">
-              <h3>Full Stack Developer Intern</h3>
-              <span>Purple Patch Consulting, Brisbane, Australia</span>
-              <p>
-                • Developed front-end interfaces using <strong>WordPress</strong>,{" "}
-                <strong>React</strong>, and <strong>Next.js</strong> for an
-                enhanced user experience.<br />
-                • Optimized back-end systems by refactoring database queries and
-                implementing caching mechanisms.<br />
-                • Achieved a <strong>30% reduction</strong> in server response
-                times through performance improvements.<br />
-                • This led to a <strong>15% increase</strong> in customer
-                satisfaction ratings and boosted overall application performance.
-              </p>
-            </div>
-          </div>
-  
-          {/* Backend Developer Intern */}
-          <div className="timeline-entry">
-            <div className="timeline-dot">
-              <span className="timeline-date">Jul 2024 - Oct 2024</span>
-            </div>
-            <div className="timeline-content">
-              <h3>Backend Developer Intern</h3>
-              <span>Kamar Pelajar, Brisbane, Australia</span>
-              <p>
-                • Partnered with front-end developers to integrate user-facing
-                elements into applications, enhancing the user experience.<br />
-                • Contributed to a 20% increase in customer satisfaction ratings
-                due to smoother user interactions.<br />
-                • Engineered and maintained robust backend systems with{" "}
-                <strong>Laravel</strong>, <strong>PHP</strong>, and{" "}
-                <strong>MySQL</strong> for reliable performance. <br />
-                • Improved database response time by 40%, benefiting over 500
-                daily active users with a faster experience.
-              </p>
-            </div>
-          </div>
-  
-          {/* Teaching Assistant */}
-          <div className="timeline-entry">
-            <div className="timeline-dot">
-              <span className="timeline-date">Feb 2022 - Dec 2022</span>
-            </div>
-            <div className="timeline-content">
-              <h3>Teaching Assistant</h3>
-              <span>University of Indonesia, Jakarta, Indonesia</span>
-              <p>
-                • <strong>Platform-based Development</strong>: Delivered web,
-                mobile, and API content; mentored 30+ students, raising project
-                grades by 25%, and organized 20+ support meetings.<br />
-                • <strong>Statistics and Probability</strong>: Led content
-                delivery, grading, and support sessions, improving student exam
-                scores by 20%.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-  
+
+        <VerticalTimeline lineColor="rgba(59, 130, 246, 0.3)">
+          {experiences.map((exp, i) => (
+            <VerticalTimelineElement
+              key={i}
+              date={exp.date}
+              iconStyle={{
+          background: 'rgba(59, 130, 246, 0.15)', // more transparent
+          backdropFilter: 'blur(8px)',
+          boxShadow: 'none',
+              }}
+              icon={<BriefcaseIcon className="w-5 h-5 text-white" />}
+              contentStyle={{
+          background: 'rgba(17, 24, 39, 0.7)', // more transparent
+          color: '#fff',
+          backdropFilter: 'blur(8px)',
+          borderRadius: '1rem',
+          boxShadow: '0 4px 12px rgba(158, 211, 255, 0.35)', // softer shadow
+              }}
+              contentArrowStyle={{ borderRight: '7px solid rgba(121, 95, 95, 0)' }}
+            >
+              <h3 className="text-2xl font-bold text-blue-200 mb-1">{exp.title}</h3>
+              <h4 className="text-md text-slate-300 mb-3">{exp.company}</h4>
+              <ul className="list-disc list-inside text-slate-400 space-y-1 border-0 ">
+          {exp.points.map((point, j) => (
+            <li key={j}>{point}</li>
+          ))}
+              </ul>
+            </VerticalTimelineElement>
+          ))}
+        </VerticalTimeline>
+      </div>
+
+      <div className="absolute bottom-0 left-0 w-full h-20 z-0" />
+    </section>
+  );
+}

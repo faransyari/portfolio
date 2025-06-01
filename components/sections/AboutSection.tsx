@@ -1,274 +1,199 @@
-import { HeroHighlight, Highlight } from "../ui/hero-highlight";
 import Image from "next/image";
+import "../../styles/globals.css";
 
 export default function AboutSection() {
-  return (
-    <section id="about" style={{ padding: "2rem", height: "100vh" }}>
-            <HeroHighlight containerClassName="bg-transparent text-white">
-                <div
+    return (
+        <section
+            id="about"
+            className="py-5 bg-gray-950 text-white font-['Roboto']"
+        >
+            <div
                 data-aos="fade-up"
-
-                className="frosted-container"
-                style={{
-                    padding: "2rem 3rem",
-                    background: "rgba(255, 255, 255, 0.05)", // Transparent frosted effect
-                    borderRadius: "16px",
-                    border: "none",
-                    maxWidth: "1200px",
-                    marginTop: "10rem",
-
-                    }}
-                    >
-                    <h2 style={{ fontSize: "2.5rem", color: "#82b1ff", textAlign: "center" }}>
+                className="max-w-6xl mx-auto px-5 sm:px-10 lg:px-14"
+            >
+                <div className="rounded-3xl p-10 md:p-16 mt-20">
+                    <h2 className="text-4xl md:text-5xl font-semibold text-center text-blue-400 mb-6">
                         About Me
                     </h2>
-                    <p
-                        style={{
-                        color: "#b0c4de",
-                        fontSize: "1.5rem",
-                        lineHeight: "2.2rem",
-                        marginTop: "1rem",
-                        textAlign: "justify",
-                        }}
-                    >
-                        I&apos;m a{" "}
-                        <Highlight>
-                            Software Engineer
-                        </Highlight>{" "}
-                        with a strong foundation in computer science and a deep passion for designing innovative solutions. 
-                        I hold a degree in IT from the{" "}
-                        <Highlight>
-                            University of Queensland
-                        </Highlight>{" "}
-                        and a Computer Science degree from the{" "}
-                        <Highlight>
-                            University of Indonesia
-                        </Highlight>
-                        . With extensive experience in developing robust applications, optimizing performance, and delivering 
-                        seamless user experiences, I am committed to achieving excellence in every project I undertake.
+                    <p className="text-lg md:text-xl text-slate-300 leading-relaxed text-center">
+                        Software Engineer with dual degrees from the
+                        <span className="text-blue-300 font-semibold"> University of Queensland</span> and
+                        <span className="text-blue-300 font-semibold"> University of Indonesia</span>. Specialized in fullstack development, mobile development, and data engineering.
                     </p>
 
-                    {/* Grid Section */}
-                <div
-                    style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-                    gap: "2rem",
-                    marginTop: "2rem",
-                    }}
-                >
-                    {/* Programming Languages */}
-                    <div style={{ textAlign: "center" }}>
-                    <h3
-                        style={{
-                        marginBottom: "1rem",
-                        color: "#82b1ff",
-                        fontSize: "1.5rem",
-                        fontWeight: "bold",
-                        }}
-                    >
-                        Programming Languages
-                    </h3>
-                    <div
-                        style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(3, 1fr)", // 3 icons per row
-                        gap: "1rem",
-                        }}
-                    >
-                        {[
-                        { name: "C++", src: "/images/cpp-icon.png", background: "rgba(0, 122, 204, 0.2)" },
-                        { name: "Java", src: "/images/java-icon.png", background: "rgba(244, 68, 58, 0.2)" },
-                        { name: "Python", src: "/images/python-icon.png", background: "rgba(53, 114, 165, 0.2)" },
-                        { name: "PHP", src: "/images/php-icon.png", background: "rgba(79, 93, 149, 0.2)" },
-                        { name: "JavaScript", src: "/images/javascript-icon.png", background: "rgba(247, 223, 30, 0.2)" },
-                        { name: "TypeScript", src: "/images/typescript-icon.png", background: "rgba(0, 122, 204, 0.2)" },
-                        { name: "Dart", src: "/images/dart-icon.png", background: "rgba(0, 180, 255, 0.2)" },
-                        { name: "GO", src: "/images/go-icon.png", background: "rgba(0, 173, 216, 0.2)" },
-                        { name: "Swift", src: "/images/swift-icon.png", background: "rgba(255, 69, 58, 0.2)" },
-                        ].map((lang, index) => (
-                        <div
-                            key={index}
-                            className="tech-item"
-
-                            style={{
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            width: "100%", // Full width of parent
-                            padding: "1rem",
-                            borderRadius: "12px",
-                            background: lang.background,
-                            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-                            textAlign: "center",
-                            aspectRatio: "1 / 1", // Ensures 1:1 aspect ratio
-                            }}
-                        >
-                            <Image
-                            src={lang.src}
-                            alt={lang.name}
-                            width={90}
-                            height={90}
-                            style={{
-                                objectFit: "contain",
-                                borderRadius: "8px",
-                            }}
-                            />
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12">
+                        {/* Programming Languages */}
+                        <div>
+                            <h3 className="text-xl font-semibold text-blue-400 text-center mb-6">
+                                Programming Languages
+                            </h3>
+                            <div className="grid grid-cols-3 gap-4 mt-6">
+                                {[{
+                                    name: "C++",
+                                    src: "/images/cpp-icon.png",
+                                    bg: "bg-blue-500/20",
+                                }, {
+                                    name: "Java",
+                                    src: "/images/java-icon.png",
+                                    bg: "bg-red-500/20",
+                                }, {
+                                    name: "Python",
+                                    src: "/images/python-icon.png",
+                                    bg: "bg-blue-400/20",
+                                }, {
+                                    name: "PHP",
+                                    src: "/images/php-icon.png",
+                                    bg: "bg-indigo-600/20",
+                                }, {
+                                    name: "JavaScript",
+                                    src: "/images/javascript-icon.png",
+                                    bg: "bg-yellow-300/20",
+                                }, {
+                                    name: "TypeScript",
+                                    src: "/images/typescript-icon.png",
+                                    bg: "bg-blue-500/20",
+                                }, {
+                                    name: "Dart",
+                                    src: "/images/dart-icon.png",
+                                    bg: "bg-cyan-400/20",
+                                }, {
+                                    name: "GO",
+                                    src: "/images/go-icon.png",
+                                    bg: "bg-sky-500/20",
+                                }, {
+                                    name: "Swift",
+                                    src: "/images/swift-icon.png",
+                                    bg: "bg-red-400/20",
+                                }].map((lang, i) => (
+                                    <div
+                                        key={i}
+                                        className={`relative group rounded-2xl ${lang.bg} shadow-md flex justify-center items-center p-4 aspect-square hover:scale-110 transition-transform duration-200`}
+                                    >
+                                        <Image
+                                            src={lang.src}
+                                            alt={lang.name}
+                                            width={80}
+                                            height={80}
+                                            className="object-contain"
+                                        />
+                                        <span className="absolute bottom-2 left-1/2 -translate-x-1/2 px-2 py-1 rounded bg-gray-800 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 whitespace-nowrap">
+                                            {lang.name}
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                        ))}
-                    </div>
-                    </div>
 
-                    {/* Frameworks & Libraries */}
-                    <div style={{ textAlign: "center" }}>
-                    <h3
-                        style={{
-                        marginBottom: "1rem",
-                        color: "#82b1ff",
-                        fontSize: "1.5rem",
-                        fontWeight: "bold",
-                        }}
-                    >
-                        Frameworks & Libraries
-                    </h3>
-                    <div
-                        style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(3, 1fr)", // 3 icons per row
-                        gap: "1rem",
-                        }}
-                    >
-                        {[
-                        { name: "React", src: "/images/react-icon.png", background: "rgba(97, 218, 251, 0.2)" },
-                        { name: "Next.js", src: "/images/nextjs-icon.png", background: "rgba(156, 154, 154, 0.2)" },
-                        { name: "Node.js", src: "/images/nodejs-icon.png", background: "rgba(104, 160, 99, 0.2)" },
-                        { name: "Spring Boot", src: "/images/springboot-icon.png", background: "rgba(109, 179, 63, 0.2)" },
-                        { name: "Django", src: "/images/django-icon.png", background: "#092e20" },
-                        { name: "Laravel", src: "/images/laravel-icon.png", background: "rgba(255, 45, 32, 0.2)" },
-                        { name: "CodeIgniter", src: "/images/codeigniter-icon.png", background: "rgba(221, 72, 20, 0.2)" },
-                        { name: "Flutter", src: "/images/flutter-icon.png", background: "rgba(2, 86, 155, 0.2)" },
-                        ].map((framework, index) => (
-                        <div
-                            key={index}
-                            className="tech-item"
-
-                            style={{
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            width: "100%",
-                            padding: "1rem",
-                            borderRadius: "12px",
-                            background: framework.background,
-                            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-                            textAlign: "center",
-                            aspectRatio: "1 / 1",
-                            }}
-                        >
-                            <Image
-                            src={framework.src}
-                            alt={framework.name}
-                            width={65}
-                            height={65}
-                            style={{
-                                objectFit: "contain",
-                                borderRadius: "8px",
-                            }}
-                            />
+                        {/* Frameworks & Libraries */}
+                        <div>
+                            <h3 className="text-xl font-semibold text-blue-400 text-center mb-6">
+                                Frameworks & Libraries
+                            </h3>
+                            <div className="grid grid-cols-3 gap-4 mt-6">
+                                {[{
+                                    name: "React",
+                                    src: "/images/react-icon.png",
+                                    bg: "bg-cyan-300/20",
+                                }, {
+                                    name: "Next.js",
+                                    src: "/images/nextjs-icon.png",
+                                    bg: "bg-gray-400/20",
+                                }, {
+                                    name: "Node.js",
+                                    src: "/images/nodejs-icon.png",
+                                    bg: "bg-green-400/20",
+                                }, {
+                                    name: "Spring Boot",
+                                    src: "/images/springboot-icon.png",
+                                    bg: "bg-lime-500/20",
+                                }, {
+                                    name: "Django",
+                                    src: "/images/django-icon.png",
+                                    bg: "bg-green-900",
+                                }, {
+                                    name: "Laravel",
+                                    src: "/images/laravel-icon.png",
+                                    bg: "bg-red-500/20",
+                                }, {
+                                    name: "CodeIgniter",
+                                    src: "/images/codeigniter-icon.png",
+                                    bg: "bg-orange-600/20",
+                                }, {
+                                    name: "Flutter",
+                                    src: "/images/flutter-icon.png",
+                                    bg: "bg-blue-800/20",
+                                }].map((framework, i) => (
+                                    <div
+                                        key={i}
+                                        className={`relative group rounded-2xl ${framework.bg} shadow-md flex justify-center items-center p-4 aspect-square hover:scale-110 transition-transform duration-200`}
+                                    >
+                                        <Image
+                                            src={framework.src}
+                                            alt={framework.name}
+                                            width={60}
+                                            height={60}
+                                            className="object-contain"
+                                        />
+                                        <span className="absolute bottom-2 left-1/2 -translate-x-1/2 px-2 py-1 rounded bg-gray-800 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 whitespace-nowrap">
+                                            {framework.name}
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                        ))}
-                    </div>
-                    </div>
 
-                    {/* Web and Databases */}
-                    <div style={{ textAlign: "center" }}>
-                    <h3
-                        style={{
-                        marginBottom: "1rem",
-                        color: "#82b1ff",
-                        fontSize: "1.5rem",
-                        fontWeight: "bold",
-                        }}
-                    >
-                        Web & Databases
-                    </h3>
-                    <div
-                        style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(3, 1fr)", // 3 icons per row
-                        gap: "1rem",
-                        }}
-                    >
-                        {[
-                        { name: "CSS", src: "/images/css-icon.png", background: "rgba(0, 122, 204, 0.2)" },
-                        { name: "HTML", src: "/images/html-icon.png", background: "rgba(255, 87, 34, 0.2)" },
-                        { name: "Bootstrap", src: "/images/bootstrap-icon.png", background: "rgba(86, 61, 124, 0.2)" },
-                        { name: "Tailwind CSS", src: "/images/tailwind-icon.png", background: "rgba(56, 189, 248, 0.2)" },
-                        { name: "PostgreSQL", src: "/images/postgresql-icon.png", background: "rgba(49, 99, 149, 0.2)" },
-                        { name: "MySQL", src: "/images/mysql-icon.png", background: "rgba(0, 123, 255, 0.2)" },
-                        ].map((tech, index) => (
-                        <div
-                            key={index}
-                            className="tech-item"
-                            style={{
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            width: "100%",
-                            padding: "1rem",
-                            borderRadius: "12px",
-                            background: tech.background,
-                            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-                            textAlign: "center",
-                            aspectRatio: "1 / 1",
-                            }}
-                        >
-                            <Image
-                            src={tech.src}
-                            alt={tech.name}
-                            width={90}
-                            height={90}
-                            style={{
-                                objectFit: "contain",
-                                borderRadius: "8px",
-                            }}
-                            />
+                        {/* Web & Databases */}
+                        <div>
+                            <h3 className="text-xl font-semibold text-blue-400 text-center mb-6">
+                                Web & Databases
+                            </h3>
+                            <div className="grid grid-cols-3 gap-4 mt-6">
+                                {[{
+                                    name: "CSS",
+                                    src: "/images/css-icon.png",
+                                    bg: "bg-blue-500/20",
+                                }, {
+                                    name: "HTML",
+                                    src: "/images/html-icon.png",
+                                    bg: "bg-orange-400/20",
+                                }, {
+                                    name: "Bootstrap",
+                                    src: "/images/bootstrap-icon.png",
+                                    bg: "bg-purple-800/20",
+                                }, {
+                                    name: "Tailwind CSS",
+                                    src: "/images/tailwind-icon.png",
+                                    bg: "bg-sky-400/20",
+                                }, {
+                                    name: "PostgreSQL",
+                                    src: "/images/postgresql-icon.png",
+                                    bg: "bg-blue-800/20",
+                                }, {
+                                    name: "MySQL",
+                                    src: "/images/mysql-icon.png",
+                                    bg: "bg-blue-600/20",
+                                }].map((tech, i) => (
+                                    <div
+                                        key={i}
+                                        className={`relative group rounded-2xl ${tech.bg} shadow-md flex justify-center items-center p-4 aspect-square hover:scale-110 transition-transform duration-200`}
+                                    >
+                                        <Image
+                                            src={tech.src}
+                                            alt={tech.name}
+                                            width={80}
+                                            height={80}
+                                            className="object-contain"
+                                        />
+                                        <span className="absolute bottom-2 left-1/2 -translate-x-1/2 px-2 py-1 rounded bg-gray-800 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 whitespace-nowrap">
+                                            {tech.name}
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                        ))}
-                    </div>
                     </div>
                 </div>
-                </div>
-            </HeroHighlight>
-            <style jsx>{`
-                .tech-item {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 100%;
-                    padding: 1rem;
-                    border-radius: 12px;
-                    background: rgba(255, 255, 255, 0.1);
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                    text-align: center;
-                    aspect-ratio: 1 / 1;
-                    transition: transform 0.2s ease-in-out, background 0.2s ease-in-out;
-                }
-
-                .tech-item:hover {
-                    transform: scale(1.2); /* Slightly expands */
-                    background: rgba(130, 177, 255, 0.2); /* Light blue tint on hover */
-                }
-
-                .tech-item img {
-                    transition: transform 0.2s ease-in-out;
-                }
-
-                .tech-item:hover img {
-                    transform: scale(1.05); /* Slightly enlarge icon */
-                }
-            `}</style>
-
+            </div>
         </section>
-  );
+    );
 }
