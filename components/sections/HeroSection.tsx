@@ -3,7 +3,6 @@ import useAos from "../hooks/useAos";
 import { FlipWords } from "../ui/flip-words";
 import "../../styles/globals.css";
 
-
 export default function HeroSection() {
   useAos();
 
@@ -20,7 +19,7 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-6xl w-full mx-auto flex flex-col md:flex-row items-center justify-center gap-10">
         {/* Profile Picture */}
         <div
-          data-aos="fade-right"
+          data-aos="fade-up"
           className="flex-shrink-0 w-60 h-60 rounded-full overflow-hidden border-none shadow-xl relative"
         >
           <Image
@@ -42,7 +41,7 @@ export default function HeroSection() {
         {/* Text Section */}
         <div className="flex-1 text-center md:text-left flex flex-col items-center md:items-start">
           <div
-            data-aos="fade-left"
+            data-aos="fade-up"
             className="text-2xl sm:text-3xl md:text-4xl leading-tight text-slate-300"
           >
             <p className="font-light tracking-wide">My name is</p>
@@ -55,8 +54,6 @@ export default function HeroSection() {
               className="font-bold text-blue-400 text-xl md:text-2xl mt-2"
             />
           </div>
-
-
 
           {/* Social Media Buttons */}
           <div
@@ -79,7 +76,10 @@ export default function HeroSection() {
               </a>
             ))}
           </div>
-                    {/* Resume Button */}
+
+            <div
+            data-aos="fade-up">
+            {/* Resume Button */}
             <a
               href="/resume.pdf"
               download
@@ -87,6 +87,7 @@ export default function HeroSection() {
             >
               Resume
             </a>
+            </div>
         </div>
       </div>
 
