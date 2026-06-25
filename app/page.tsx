@@ -3,6 +3,7 @@ import HeroSection from "../components/sections/HeroSection";
 import StatsSection from "../components/sections/StatsSection";
 import AboutSection from "../components/sections/AboutSection";
 import SkillsSection from "../components/sections/SkillsSection";
+import FeaturedProjectSection from "../components/sections/FeaturedProjectSection";
 
 const navItems = [
   { name: "Home", link: "#home" },
@@ -21,6 +22,7 @@ export default function Home() {
       <StatsSection />
       <AboutSection />
       <SkillsSection />
+      <FeaturedProjectSection />
     </main>
   );
 }
