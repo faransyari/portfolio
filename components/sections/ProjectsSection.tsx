@@ -13,13 +13,13 @@ export default function ProjectsSection() {
       </Reveal>
       <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
         {projects.map((p, i) => (
-          <Reveal key={p.name} delay={(i % 2) * 0.08}>
+          <Reveal key={p.name} delay={(i % 2) * 0.08} className="h-full">
             <div className="group flex h-full flex-col overflow-hidden rounded-[22px] border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(0,0,0,0.25)]">
               <div className="relative aspect-video overflow-hidden border-b border-border">
                 {p.video ? (
-                  <iframe src={p.video} title={p.name} className="h-full w-full" allowFullScreen />
+                  <iframe src={p.video} title={p.name} allow="autoplay; encrypted-media; picture-in-picture" className="h-full w-full" allowFullScreen />
                 ) : (
-                  <Image src={p.image!} alt={p.name} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <Image src={p.image!} alt={p.name} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
                 )}
               </div>
               <div className="flex flex-1 flex-col p-6">

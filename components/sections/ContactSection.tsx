@@ -18,7 +18,7 @@ export default function ContactSection() {
         </Reveal>
         <Reveal delay={0.2}>
           <a href={`mailto:${PORTFOLIO_INFO.email}`}
-             className="mt-8 inline-block rounded-full bg-primary px-8 py-3.5 font-medium text-primary-foreground transition-transform hover:scale-[1.03]">
+             className="mt-8 inline-block rounded-full bg-primary px-8 py-3.5 font-medium text-primary-foreground transition-transform motion-safe:hover:scale-[1.03]">
             {PORTFOLIO_INFO.email}
           </a>
         </Reveal>

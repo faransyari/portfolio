@@ -36,7 +36,7 @@ export default function FeaturedProjectSection() {
             <div className="mt-8 flex gap-3">
               {p.demo && (
                 <a href={p.demo} target="_blank" rel="noopener noreferrer"
-                   className="rounded-full bg-primary px-6 py-2.5 font-medium text-primary-foreground transition-transform hover:scale-[1.03]">
+                   className="rounded-full bg-primary px-6 py-2.5 font-medium text-primary-foreground transition-transform motion-safe:hover:scale-[1.03]">
                   Live Demo
                 </a>
               )}

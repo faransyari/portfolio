@@ -43,7 +43,7 @@ export default function HeroSection() {
 
       <Reveal delay={0.32}>
         <a href="/resume.pdf" download
-           className="mt-8 inline-block rounded-full bg-primary px-7 py-3 font-medium text-primary-foreground transition-transform hover:scale-[1.03]">
+           className="mt-8 inline-block rounded-full bg-primary px-7 py-3 font-medium text-primary-foreground transition-transform motion-safe:hover:scale-[1.03]">
           Download Resume
         </a>
       </Reveal>
