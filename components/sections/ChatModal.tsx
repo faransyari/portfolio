@@ -84,7 +84,7 @@ export default function ChatModal({ isOpen, onClose }: { isOpen: boolean, onClos
       }
     } catch (error) {
       let errorMessage = "Sorry, I'm having trouble connecting right now. Please try again later!";
-      
+
       if (error instanceof Error) {
         if (error.message.includes('API key') || error.message.includes('❌')) {
           errorMessage = error.message;
@@ -92,7 +92,7 @@ export default function ChatModal({ isOpen, onClose }: { isOpen: boolean, onClos
           errorMessage = "💳 OpenAI API quota exceeded!\n\nPlease check your OpenAI billing and usage limits at:\nhttps://platform.openai.com/usage";
         }
       }
-      
+
       const errorBotMessage: Message = {
         id: (Date.now() + 1).toString(),
         text: errorMessage,
@@ -122,23 +122,23 @@ export default function ChatModal({ isOpen, onClose }: { isOpen: boolean, onClos
         animate={{ scale: 1, opacity: 1, y: 0 }}
         exit={{ scale: 0.95, opacity: 0, y: 20 }}
         transition={{ duration: 0.2 }}
-        className="bg-gray-900/95 backdrop-blur-md w-full max-w-lg rounded-2xl shadow-2xl border border-gray-700/50 overflow-hidden"
+        className="bg-card text-foreground border border-border backdrop-blur-md w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden"
       >
         {/* Header */}
-        <div className="bg-gradient-to-r from-blue-400/20 via-purple-400/20 to-pink-400/20 backdrop-blur-sm border-b border-gray-700/50 p-4">
+        <div className="border-b border-border p-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 flex items-center justify-center">
-                <FiMessageSquare className="w-5 h-5 text-white" />
+              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+                <FiMessageSquare className="w-5 h-5 text-primary-foreground" />
               </div>
               <div>
-                <h2 className="text-lg font-semibold text-white">Bot</h2>
-                <p className="text-sm text-gray-300">Ask me anything about my portfolio</p>
+                <h2 className="text-lg font-semibold text-foreground">Bot</h2>
+                <p className="text-sm text-muted-foreground">Ask me anything about my portfolio</p>
               </div>
             </div>
             <button
               onClick={onClose}
-              className="text-gray-400 hover:text-white transition-colors p-1 rounded-full hover:bg-gray-700/50"
+              className="text-muted-foreground hover:text-foreground transition-colors p-1 rounded-full hover:bg-muted"
             >
               <FiX className="w-5 h-5" />
             </button>
@@ -146,7 +146,7 @@ export default function ChatModal({ isOpen, onClose }: { isOpen: boolean, onClos
         </div>
 
         {/* Messages */}
-        <div className="h-96 overflow-y-auto p-4 space-y-4 bg-gray-950/50">
+        <div className="h-96 overflow-y-auto p-4 space-y-4 bg-background">
           <AnimatePresence>
             {messages.map((message) => (
               <motion.div
@@ -158,20 +158,20 @@ export default function ChatModal({ isOpen, onClose }: { isOpen: boolean, onClos
               >
                 <div className={`flex items-start space-x-2 max-w-xs ${message.isUser ? 'flex-row-reverse space-x-reverse' : ''}`}>
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                    message.isUser 
-                      ? 'bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400' 
-                      : 'bg-gray-700'
+                    message.isUser
+                      ? 'bg-primary'
+                      : 'bg-muted'
                   }`}>
                     {message.isUser ? (
-                      <FiUser className="w-4 h-4 text-white" />
+                      <FiUser className="w-4 h-4 text-primary-foreground" />
                     ) : (
-                      <FiMessageSquare className="w-4 h-4 text-gray-300" />
+                      <FiMessageSquare className="w-4 h-4 text-foreground" />
                     )}
                   </div>
                   <div className={`rounded-2xl px-4 py-2 ${
                     message.isUser
-                      ? 'bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 text-white border border-blue-400/30'
-                      : 'bg-gray-800/50 text-gray-100 border border-gray-700/50'
+                      ? 'bg-primary text-primary-foreground'
+                      : 'bg-muted text-foreground'
                   }`}>
                     <p className="text-sm leading-relaxed">{message.text}</p>
                     <p className="text-xs mt-1 opacity-60">
@@ -182,7 +182,7 @@ export default function ChatModal({ isOpen, onClose }: { isOpen: boolean, onClos
               </motion.div>
             ))}
           </AnimatePresence>
-          
+
           {isLoading && (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -190,14 +190,14 @@ export default function ChatModal({ isOpen, onClose }: { isOpen: boolean, onClos
               className="flex justify-start"
             >
               <div className="flex items-start space-x-2">
-                <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center">
-                  <FiMessageSquare className="w-4 h-4 text-gray-300" />
+                <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+                  <FiMessageSquare className="w-4 h-4 text-foreground" />
                 </div>
-                <div className="bg-gray-800/50 border border-gray-700/50 rounded-2xl px-4 py-2">
+                <div className="bg-muted rounded-2xl px-4 py-2">
                   <div className="flex space-x-1">
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                    <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce"></div>
+                    <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                    <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                   </div>
                 </div>
               </div>
@@ -207,7 +207,7 @@ export default function ChatModal({ isOpen, onClose }: { isOpen: boolean, onClos
         </div>
 
         {/* Input */}
-        <div className="border-t border-gray-700/50 p-4 bg-gray-900/50">
+        <div className="border-t border-border p-4 bg-card">
           <div className="flex items-center space-x-3">
             <input
               type="text"
@@ -216,12 +216,12 @@ export default function ChatModal({ isOpen, onClose }: { isOpen: boolean, onClos
               onKeyPress={handleKeyPress}
               placeholder="Type your message..."
               disabled={isLoading}
-              className="flex-1 bg-gray-800/50 border border-gray-700/50 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400/50 focus:border-blue-400/50 transition-all disabled:opacity-50"
+              className="flex-1 bg-background border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all disabled:opacity-50"
             />
             <button
               onClick={sendMessage}
               disabled={!inputMessage.trim() || isLoading}
-              className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 disabled:from-gray-600 disabled:via-gray-600 disabled:to-gray-600 text-white p-3 rounded-xl transition-all duration-200 disabled:cursor-not-allowed"
+              className="bg-primary text-primary-foreground disabled:opacity-50 p-3 rounded-xl transition-all duration-200 disabled:cursor-not-allowed hover:opacity-90"
             >
               <FiSend className="w-5 h-5" />
             </button>

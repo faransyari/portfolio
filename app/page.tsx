@@ -8,6 +8,7 @@ import ProjectsSection from "../components/sections/ProjectsSection";
 import WorkSection from "../components/sections/WorkSection";
 import EducationSection from "../components/sections/EducationSection";
 import ContactSection from "../components/sections/ContactSection";
+import ChatLauncher from "../components/sections/ChatLauncher";
 
 const navItems = [
   { name: "Home", link: "#home" },
@@ -31,6 +32,7 @@ export default function Home() {
       <WorkSection />
       <EducationSection />
       <ContactSection />
+      <ChatLauncher />
     </main>
   );
 }
