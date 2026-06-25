@@ -136,11 +136,15 @@ export default function WorkSection() {
             style={{ x, paddingLeft: pad, paddingRight: pad }}
             className="relative flex"
           >
-            {/* Timeline line through the nodes (top-44 = node row) */}
-            <div className="pointer-events-none absolute left-0 right-0 top-44 h-0.5 -translate-y-1/2 rounded-full bg-border" aria-hidden />
+            {/* Timeline bar connecting the dots (first dot -> last dot) */}
+            <div
+              className="pointer-events-none absolute top-44 h-1 -translate-y-1/2 rounded-full bg-border"
+              style={{ left: pad, width: distance }}
+              aria-hidden
+            />
             <motion.div
-              className="pointer-events-none absolute left-0 right-0 top-44 h-0.5 -translate-y-1/2 origin-left rounded-full bg-primary"
-              style={{ scaleX: fill }}
+              className="pointer-events-none absolute top-44 h-1 -translate-y-1/2 origin-left rounded-full bg-primary"
+              style={{ left: pad, width: distance, scaleX: fill }}
               aria-hidden
             />
             {PORTFOLIO_INFO.workExperience.map((exp, i) => (
