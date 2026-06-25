@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { Section } from "../ui/Section";
 import { Reveal } from "../ui/Reveal";
 import { PORTFOLIO_INFO } from "@/config/portfolio-info";
@@ -96,7 +96,8 @@ export default function ProjectsSection() {
     target: sectionRef,
     offset: ["start start", "end end"],
   });
-  const x = useTransform(scrollYProgress, [0, 1], [0, -distance]);
+  const xRaw = useTransform(scrollYProgress, [0, 1], [0, -distance]);
+  const x = useSpring(xRaw, { stiffness: 120, damping: 30, restDelta: 0.5 });
 
   // Reduced motion: plain responsive grid, no scroll-jacking.
   if (reduced) {

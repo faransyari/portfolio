@@ -50,7 +50,8 @@ function HorizontalItem({ exp }: { exp: Experience }) {
 
       {/* Content above the line */}
       <motion.div
-        animate={{ opacity: active ? 1 : 0.5, y: active ? 0 : 6 }}
+        className="origin-left"
+        animate={{ opacity: active ? 1 : 0.5, y: active ? 0 : 6, scale: active ? 1 : 0.97 }}
         transition={{ duration: 0.4, ease: EASE }}
       >
         <span className="inline-block rounded-full border border-border px-3 py-1 text-xs font-medium tracking-wide text-muted-foreground">
@@ -97,7 +98,8 @@ export default function WorkSection() {
     target: sectionRef,
     offset: ["start start", "end end"],
   });
-  const x = useTransform(scrollYProgress, [0, 1], [0, -distance]);
+  const xRaw = useTransform(scrollYProgress, [0, 1], [0, -distance]);
+  const x = useSpring(xRaw, { stiffness: 120, damping: 30, restDelta: 0.5 });
   const fill = useSpring(scrollYProgress, { stiffness: 90, damping: 30, restDelta: 0.001 });
 
   // Reduced motion: static vertical timeline, no scroll-jacking.
