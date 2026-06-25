@@ -1,4 +1,5 @@
 import { FloatingNav } from "../components/ui/floating-navbar";
+import HeroSection from "../components/sections/HeroSection";
 
 const navItems = [
   { name: "Home", link: "#home" },
@@ -13,9 +14,7 @@ export default function Home() {
   return (
     <main className="relative">
       <FloatingNav navItems={navItems} />
-      <section className="flex min-h-screen items-center justify-center">
-        <h1 className="text-4xl font-semibold tracking-tight">Portfolio (rebuilding)</h1>
-      </section>
+      <HeroSection />
     </main>
   );
 }
