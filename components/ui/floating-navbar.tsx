@@ -7,6 +7,7 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "../theme/ThemeToggle";
 
 export const FloatingNav = ({
   navItems,
@@ -65,10 +66,8 @@ export const FloatingNav = ({
           animate={{ y: 0, opacity: 0.9 }}
           exit={{ opacity: 0, y: -100 }}
           transition={{ duration: 0.3 }}
-          style={{ background: "rgba(16, 27, 48, 0.8)" }}
-
           className={cn(
-            "fixed top-4 inset-x-0 mx-auto z-[9999] rounded-full backdrop-blur-md shadow-lg py-4 px-5 flex items-center justify-between max-w-fit",
+            "fixed top-4 inset-x-0 mx-auto z-[9999] rounded-full bg-card/70 border border-border backdrop-blur-xl shadow-lg py-4 px-5 flex items-center justify-between max-w-fit",
             className
           )}
         >
@@ -80,37 +79,38 @@ export const FloatingNav = ({
             aria-expanded={menuOpen}
           >
             <motion.span
-              className="block h-1 w-full bg-white rounded"
+              className="block h-1 w-full bg-foreground rounded"
               animate={menuOpen ? "openTop" : "closed"}
               variants={lineVariants}
               transition={{ duration: 0.3 }}
             />
             <motion.span
-              className="block h-1 w-full bg-white rounded my-1"
+              className="block h-1 w-full bg-foreground rounded my-1"
               animate={menuOpen ? "openMiddle" : "closed"}
               variants={lineVariants}
               transition={{ duration: 0.3 }}
             />
             <motion.span
-              className="block h-1 w-full bg-white rounded"
+              className="block h-1 w-full bg-foreground rounded"
               animate={menuOpen ? "openBottom" : "closed"}
               variants={lineVariants}
               transition={{ duration: 0.3 }}
             />
           </button>
 
-          <div className="hidden md:flex items-center space-x-20">
+          <div className="hidden md:flex items-center space-x-8">
             {navItems.map((navItem, idx) => (
               <a
                 key={idx}
                 href={navItem.link}
                 onClick={(e) => handleNavClick(e, navItem.link.substring(1))}
-                className="text-sm text-white hover:text-blue-400 transition cursor-pointer flex items-center"
+                className="text-sm text-muted-foreground hover:text-foreground transition cursor-pointer flex items-center"
               >
                 {navItem.icon && <span className="mr-1">{navItem.icon}</span>}
                 {navItem.name}
               </a>
             ))}
+            <span className="ml-2"><ThemeToggle /></span>
           </div>
 
           <AnimatePresence>
@@ -120,15 +120,14 @@ export const FloatingNav = ({
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.2 }}
-                className="absolute top-full -left-16 mt-2 w-48 rounded-xl backdrop-blur-sm shadow-lg flex flex-col space-y-3 py-4 px-6 z-40"
-                style={{ background: "rgba(16, 27, 48, 0.8)" }}
+                className="absolute top-full -left-16 mt-2 w-48 rounded-xl bg-card/90 border border-border backdrop-blur-xl shadow-lg flex flex-col space-y-3 py-4 px-6 z-40"
               >
                 {navItems.map((navItem, idx) => (
                   <a
                     key={idx}
                     href={navItem.link}
                     onClick={(e) => handleNavClick(e, navItem.link.substring(1))}
-                    className="text-white hover:text-blue-400 cursor-pointer flex items-center"
+                    className="text-muted-foreground hover:text-foreground cursor-pointer flex items-center"
                   >
                     {navItem.icon && <span className="mr-2">{navItem.icon}</span>}
                     {navItem.name}
