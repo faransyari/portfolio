@@ -1,6 +1,6 @@
 "use client";
-import { useRef } from "react";
-import { motion, useScroll, useSpring, useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useSpring, useTransform, useInView } from "framer-motion";
 import { Section } from "../ui/Section";
 import { Reveal } from "../ui/Reveal";
 import { PORTFOLIO_INFO } from "@/config/portfolio-info";
@@ -10,22 +10,30 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 
 type Experience = (typeof PORTFOLIO_INFO.workExperience)[number];
 
-function WorkItem({ exp, reduced }: { exp: Experience; reduced: boolean }) {
+function WorkHeading() {
+  return (
+    <Reveal>
+      <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">Experience</p>
+      <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">Where I&apos;ve worked</h2>
+    </Reveal>
+  );
+}
+
+function HorizontalItem({ exp }: { exp: Experience }) {
   const ref = useRef<HTMLDivElement>(null);
-  // Activates as the item crosses the vertical centre of the viewport,
-  // staying in sync with the drawing progress line.
-  const active = useInView(ref, { margin: "-50% 0px -50% 0px" });
+  // Active as the node crosses the horizontal centre of the viewport.
+  const active = useInView(ref, { margin: "0px -50% 0px -50%" });
 
   return (
-    <div ref={ref} className="relative pb-20 pl-14 last:pb-0">
-      {/* Node on the timeline */}
+    <div ref={ref} data-work-item className="relative h-72 w-[82vw] shrink-0 pr-12 pt-6 sm:w-[56vw] md:w-[42vw] lg:w-[34vw]">
+      {/* Node on the line */}
       <motion.span
-        className="absolute left-[-7px] top-2 z-10 block h-4 w-4 rounded-full border-2"
+        className="absolute left-0 top-44 z-10 block h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-2"
         initial={false}
         animate={
-          reduced || active
+          active
             ? {
-                scale: 1.2,
+                scale: 1.25,
                 borderColor: "hsl(var(--primary))",
                 backgroundColor: "hsl(var(--primary))",
                 boxShadow: "0 0 0 6px hsl(var(--primary) / 0.12)",
@@ -40,24 +48,18 @@ function WorkItem({ exp, reduced }: { exp: Experience; reduced: boolean }) {
         transition={{ duration: 0.4, ease: EASE }}
       />
 
-      {/* Entrance slide-in */}
+      {/* Content above the line */}
       <motion.div
-        initial={reduced ? false : { opacity: 0, x: -28 }}
-        whileInView={reduced ? undefined : { opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.7, ease: EASE }}
+        animate={{ opacity: active ? 1 : 0.5, y: active ? 0 : 6 }}
+        transition={{ duration: 0.4, ease: EASE }}
       >
         <span className="inline-block rounded-full border border-border px-3 py-1 text-xs font-medium tracking-wide text-muted-foreground">
           {exp.duration}
         </span>
-        <motion.h3
-          className="mt-4 text-2xl font-semibold tracking-tight md:text-4xl"
-          animate={reduced ? undefined : { opacity: active ? 1 : 0.65 }}
-          transition={{ duration: 0.4, ease: EASE }}
-        >
+        <h3 className="mt-4 text-2xl font-semibold leading-tight tracking-tight md:text-3xl">
           {exp.position}
-        </motion.h3>
-        <p className="mt-1 text-base font-medium text-primary md:text-lg">{exp.company}</p>
+        </h3>
+        <p className="mt-2 text-base font-medium text-primary md:text-lg">{exp.company}</p>
       </motion.div>
     </div>
   );
@@ -65,34 +67,86 @@ function WorkItem({ exp, reduced }: { exp: Experience; reduced: boolean }) {
 
 export default function WorkSection() {
   const reduced = useReducedMotion();
+
+  const sectionRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
+  const [distance, setDistance] = useState(0);
+  const [pad, setPad] = useState(24);
+  const [sectionHeight, setSectionHeight] = useState<number | undefined>(undefined);
+
+  useEffect(() => {
+    if (reduced) return;
+    const measure = () => {
+      const track = trackRef.current;
+      if (!track) return;
+      const items = track.querySelectorAll<HTMLElement>("[data-work-item]");
+      if (!items.length) return;
+      const w = items[0].offsetWidth;
+      const p = Math.max(24, window.innerWidth / 2 - w / 2);
+      const d = items[items.length - 1].offsetLeft - items[0].offsetLeft;
+      setPad(p);
+      setDistance(d);
+      setSectionHeight(d + window.innerHeight);
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [reduced]);
+
   const { scrollYProgress } = useScroll({
-    target: trackRef,
-    offset: ["start center", "end center"],
+    target: sectionRef,
+    offset: ["start start", "end end"],
   });
+  const x = useTransform(scrollYProgress, [0, 1], [0, -distance]);
   const fill = useSpring(scrollYProgress, { stiffness: 90, damping: 30, restDelta: 0.001 });
 
+  // Reduced motion: static vertical timeline, no scroll-jacking.
+  if (reduced) {
+    return (
+      <Section id="work">
+        <WorkHeading />
+        <div className="relative mt-12 border-l border-border pl-8">
+          {PORTFOLIO_INFO.workExperience.map((exp, i) => (
+            <div key={exp.company + i} className="relative pb-12 last:pb-0">
+              <span className="absolute -left-[33px] top-2 h-3.5 w-3.5 rounded-full border-2 border-primary bg-primary" />
+              <span className="inline-block rounded-full border border-border px-3 py-1 text-xs font-medium tracking-wide text-muted-foreground">
+                {exp.duration}
+              </span>
+              <h3 className="mt-3 text-2xl font-semibold tracking-tight">{exp.position}</h3>
+              <p className="mt-1 text-base font-medium text-primary">{exp.company}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+    );
+  }
+
   return (
-    <Section id="work">
-      <Reveal>
-        <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">Experience</p>
-        <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">Where I&apos;ve worked</h2>
-      </Reveal>
+    <section id="work" ref={sectionRef} className="relative" style={{ height: sectionHeight }}>
+      <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
+        <div className="mx-auto w-full max-w-[1120px] px-6">
+          <WorkHeading />
+        </div>
 
-      <div ref={trackRef} className="relative mt-16">
-        {/* Static track */}
-        <div className="absolute left-0 top-0 h-full w-px bg-border" aria-hidden />
-        {/* Drawing progress line */}
-        <motion.div
-          className="absolute left-0 top-0 h-full w-px origin-top bg-primary"
-          style={reduced ? { scaleY: 1 } : { scaleY: fill }}
-          aria-hidden
-        />
-
-        {PORTFOLIO_INFO.workExperience.map((exp, i) => (
-          <WorkItem key={exp.company + i} exp={exp} reduced={reduced} />
-        ))}
+        <div className="relative mt-16">
+          <motion.div
+            ref={trackRef}
+            style={{ x, paddingLeft: pad, paddingRight: pad }}
+            className="relative flex"
+          >
+            {/* Timeline line through the nodes (top-44 = node row) */}
+            <div className="pointer-events-none absolute left-0 right-0 top-44 h-0.5 -translate-y-1/2 rounded-full bg-border" aria-hidden />
+            <motion.div
+              className="pointer-events-none absolute left-0 right-0 top-44 h-0.5 -translate-y-1/2 origin-left rounded-full bg-primary"
+              style={{ scaleX: fill }}
+              aria-hidden
+            />
+            {PORTFOLIO_INFO.workExperience.map((exp, i) => (
+              <HorizontalItem key={exp.company + i} exp={exp} />
+            ))}
+          </motion.div>
+        </div>
       </div>
-    </Section>
+    </section>
   );
 }

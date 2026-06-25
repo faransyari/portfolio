@@ -9,7 +9,7 @@ export const PORTFOLIO_INFO = {
 
   skills: {
     programmingLanguages: [
-      "C++", "Java", "Python", "PHP", "JavaScript", "TypeScript", "Dart", "Go", "Swift"
+      "Java", "Python", "PHP", "JavaScript", "TypeScript", "Dart", "Go", "Swift"
     ],
     frontend: [
       "React", "Next.js", "HTML", "CSS", "Tailwind CSS", "Bootstrap"
@@ -30,42 +30,34 @@ export const PORTFOLIO_INFO = {
 
 workExperience: [
     {
+        company: "GoTo Company | Jakarta, Indonesia",
+        position: "Software Engineer",
+        duration: "Apr 2025 - Present",
+    },
+    {
+        company: "Distrosub | Brisbane, Australia",
+        position: "Founding Software Engineer",
+        duration: "Jul 2025 - Mar 2026",
+    },
+    {
         company: "University of Queensland | Brisbane, Australia",
         position: "Casual Academic Tutor",
-        duration: "Feb 2025 - Present",
-        responsibilities: [
-            "Facilitate weekly learning sessions, demonstrating strong communication and mentoring abilities.",
-            "Evaluate student performance and provide constructive feedback to support academic growth.",
-            "Collaborate with academic staff to ensure consistent delivery of course objectives"
-        ]
+        duration: "Feb 2025 - Jul 2025",
     },
     {
         company: "Purple Patch Consulting | Brisbane, Australia",
         position: "Full Stack Developer Intern",
         duration: "Oct 2024 - Dec 2024",
-        responsibilities: [
-            "Developed a real-time analytics dashboard using React and Next.js for consultants to track key metrics.",
-            "Optimized database queries, implemented Redis caching, and improved data visualization, reducing load times by 30% and leading to a 15% increase in customer satisfaction."
-        ]
     },
     {
         company: "Kamar Pelajar | Brisbane, Australia",
         position: "Backend Developer Intern",
         duration: "Jul 2024 - Oct 2024",
-        responsibilities: [
-            "Built a property dashboard with booking and listing management, improving occupancy tracking and reservations.",
-            "Integrated front-end booking features with a Laravel and MySQL backend, enhancing accuracy and efficiency.",
-            "Developed an asynchronous job processing system using Laravel Queues, handling 100+ daily transactions and improving booking request speeds by 40% for 500+ active users."
-        ]
     },
     {
         company: "University of Indonesia | Jakarta, Indonesia",
         position: "Teaching Assistant",
         duration: "Feb 2022 - Dec 2022",
-        responsibilities: [
-            "Platform-based Development: Mentored 30+ students, improved grades by 25%.",
-            "Statistics and Probability: Led support and grading; raised exam scores by 20%."
-        ]
     }
 ],
 
@@ -73,13 +65,13 @@ workExperience: [
     {
       degree: "Bachelor of Computer Science",
       institution: "University of Indonesia",
-      year: "2020",
+      year: "2020 - 2022",
       details: "Specialized in Software Engineering"
     },
     {
         degree: "Bachelor of Information Technology",
         institution: "University of Queensland",
-        year: "2023",
+        year: "2023 - 2024",
         details: "Majoring Software Information Systems"
     }
   ],
@@ -167,8 +159,8 @@ SKILLS & TECHNOLOGIES:
 - Mobile: ${PORTFOLIO_INFO.skills.mobile.join(', ')}
 
 WORK EXPERIENCE:
-${PORTFOLIO_INFO.workExperience.map(exp => 
-  `- ${exp.company} (${exp.duration}) - ${exp.position}\n  ${exp.responsibilities.map(r => `• ${r}`).join('\n  ')}`
+${PORTFOLIO_INFO.workExperience.map(exp =>
+  `- ${exp.company} (${exp.duration}) - ${exp.position}`
 ).join('\n')}
 
 EDUCATION:

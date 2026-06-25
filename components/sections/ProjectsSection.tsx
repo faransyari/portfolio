@@ -13,6 +13,7 @@ type Project = (typeof PORTFOLIO_INFO.projects)[number];
 function ProjectCard({ p, fixedWidth }: { p: Project; fixedWidth?: boolean }) {
   return (
     <div
+      data-proj-item={fixedWidth ? "" : undefined}
       className={`group flex h-full flex-col overflow-hidden rounded-[22px] border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(0,0,0,0.25)] ${
         fixedWidth ? "w-[85vw] shrink-0 sm:w-[60vw] md:w-[44vw] lg:w-[38vw]" : ""
       }`}
@@ -69,6 +70,7 @@ export default function ProjectsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const [distance, setDistance] = useState(0);
+  const [pad, setPad] = useState(24);
   const [sectionHeight, setSectionHeight] = useState<number | undefined>(undefined);
 
   useEffect(() => {
@@ -76,7 +78,12 @@ export default function ProjectsSection() {
     const measure = () => {
       const track = trackRef.current;
       if (!track) return;
-      const d = Math.max(0, track.scrollWidth - window.innerWidth + 48);
+      const items = track.querySelectorAll<HTMLElement>("[data-proj-item]");
+      if (!items.length) return;
+      const w = items[0].offsetWidth;
+      const p = Math.max(24, window.innerWidth / 2 - w / 2);
+      const d = items[items.length - 1].offsetLeft - items[0].offsetLeft;
+      setPad(p);
       setDistance(d);
       setSectionHeight(d + window.innerHeight);
     };
@@ -111,7 +118,7 @@ export default function ProjectsSection() {
         <div className="mx-auto w-full max-w-[1120px] px-6">
           <ProjectsHeading />
         </div>
-        <motion.div ref={trackRef} style={{ x }} className="mt-10 flex gap-6 px-6 md:px-[calc((100vw-1120px)/2)]">
+        <motion.div ref={trackRef} style={{ x, paddingLeft: pad, paddingRight: pad }} className="mt-10 flex gap-6">
           {projects.map((p) => (
             <ProjectCard key={p.name} p={p} fixedWidth />
           ))}
