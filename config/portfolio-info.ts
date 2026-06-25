@@ -136,7 +136,14 @@ projects: [
     "Loves pc gaming",
     "Enjoys F1 racing",
     "Avid fan of Ferrari",
-  ]
+  ],
+
+  stats: [
+    { value: 2, label: "Degrees" },
+    { value: 4, label: "Roles & Internships" },
+    { value: 8, suffix: "+", label: "Projects" },
+    { value: 9, label: "Languages" },
+  ],
 };
 
 export function generateSystemPrompt(): string {
