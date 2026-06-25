@@ -49,7 +49,7 @@ export default function HeroSection() {
       </Reveal>
 
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-muted-foreground">
-        <ArrowDown className="animate-bounce" size={20} />
+        <ArrowDown className="motion-safe:animate-bounce" size={20} />
       </div>
     </section>
   );
