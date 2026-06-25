@@ -1,16 +1,19 @@
 "use client";
-import Image from "next/image";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { PORTFOLIO_INFO } from "@/config/portfolio-info";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 
+export const FEATURED_PROJECT_NAME = "Collectiv";
+
 export default function FeaturedProjectSection() {
   const ref = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
-  const p = PORTFOLIO_INFO.projects[0]; // PC Marketplace
+  const p =
+    PORTFOLIO_INFO.projects.find((x) => x.name === FEATURED_PROJECT_NAME) ??
+    PORTFOLIO_INFO.projects[0];
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
-  const imgScale = useTransform(scrollYProgress, [0, 1], [0.9, 1.05]);
+  const mediaScale = useTransform(scrollYProgress, [0, 1], [0.9, 1.05]);
   const textY = useTransform(scrollYProgress, [0.1, 0.4], [40, 0]);
   const textOpacity = useTransform(scrollYProgress, [0.1, 0.4], [0, 1]);
 
@@ -19,10 +22,21 @@ export default function FeaturedProjectSection() {
       <div className={reduced ? "px-6 py-28" : "sticky top-0 flex min-h-screen items-center px-6"}>
         <div className="mx-auto grid w-full max-w-[1120px] items-center gap-12 md:grid-cols-2">
           <motion.div
-            style={reduced ? undefined : { scale: imgScale }}
-            className="relative aspect-[16/10] overflow-hidden rounded-[22px] border border-border bg-card"
+            style={reduced ? undefined : { scale: mediaScale }}
+            className="relative aspect-video overflow-hidden rounded-[22px] border border-border bg-card"
           >
-            <Image src={p.image!} alt={p.name} fill className="object-cover" />
+            {p.video ? (
+              <iframe
+                src={p.video}
+                title={p.name}
+                allow="autoplay; encrypted-media; picture-in-picture"
+                className="absolute inset-0 h-full w-full"
+                allowFullScreen
+              />
+            ) : (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={p.image!} alt={p.name} className="absolute inset-0 h-full w-full object-cover" />
+            )}
           </motion.div>
           <motion.div style={reduced ? undefined : { y: textY, opacity: textOpacity }}>
             <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">Featured Project</p>

@@ -132,7 +132,7 @@ export default function ChatModal({ isOpen, onClose }: { isOpen: boolean, onClos
                 <FiMessageSquare className="w-5 h-5 text-primary-foreground" />
               </div>
               <div>
-                <h2 className="text-lg font-semibold text-foreground">Bot</h2>
+                <h2 className="text-lg font-semibold text-foreground">Firlandi AI</h2>
                 <p className="text-sm text-muted-foreground">Ask me anything about my portfolio</p>
               </div>
             </div>
@@ -160,7 +160,7 @@ export default function ChatModal({ isOpen, onClose }: { isOpen: boolean, onClos
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
                     message.isUser
                       ? 'bg-primary'
-                      : 'bg-muted'
+                      : 'bg-muted border border-border'
                   }`}>
                     {message.isUser ? (
                       <FiUser className="w-4 h-4 text-primary-foreground" />
@@ -171,7 +171,7 @@ export default function ChatModal({ isOpen, onClose }: { isOpen: boolean, onClos
                   <div className={`rounded-2xl px-4 py-2 ${
                     message.isUser
                       ? 'bg-primary text-primary-foreground'
-                      : 'bg-muted text-foreground'
+                      : 'bg-muted text-foreground border border-border'
                   }`}>
                     <p className="text-sm leading-relaxed">{message.text}</p>
                     <p className="text-xs mt-1 opacity-60">
@@ -190,10 +190,10 @@ export default function ChatModal({ isOpen, onClose }: { isOpen: boolean, onClos
               className="flex justify-start"
             >
               <div className="flex items-start space-x-2">
-                <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full bg-muted border border-border flex items-center justify-center">
                   <FiMessageSquare className="w-4 h-4 text-foreground" />
                 </div>
-                <div className="bg-muted rounded-2xl px-4 py-2">
+                <div className="bg-muted border border-border rounded-2xl px-4 py-2">
                   <div className="flex space-x-1">
                     <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce"></div>
                     <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>

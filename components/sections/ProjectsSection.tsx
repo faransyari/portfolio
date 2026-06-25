@@ -2,9 +2,10 @@ import Image from "next/image";
 import { Section } from "../ui/Section";
 import { Reveal } from "../ui/Reveal";
 import { PORTFOLIO_INFO } from "@/config/portfolio-info";
+import { FEATURED_PROJECT_NAME } from "./FeaturedProjectSection";
 
 export default function ProjectsSection() {
-  const projects = PORTFOLIO_INFO.projects.slice(1);
+  const projects = PORTFOLIO_INFO.projects.filter((p) => p.name !== FEATURED_PROJECT_NAME);
   return (
     <Section id="projects">
       <Reveal>
