@@ -115,7 +115,7 @@ export default function ChatModal({ isOpen, onClose }: { isOpen: boolean, onClos
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-40 p-4">
+    <div className="fixed inset-0 bg-background/80 backdrop-blur-sm flex justify-center items-center z-40 p-4">
       <motion.div
         ref={modalRef}
         initial={{ scale: 0.95, opacity: 0, y: 20 }}

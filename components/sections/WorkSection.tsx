@@ -58,14 +58,6 @@ function WorkItem({ exp, reduced }: { exp: Experience; reduced: boolean }) {
           {exp.position}
         </motion.h3>
         <p className="mt-1 text-base font-medium text-primary md:text-lg">{exp.company}</p>
-        <ul className="mt-4 max-w-2xl space-y-2 text-muted-foreground">
-          {exp.responsibilities.map((r, j) => (
-            <li key={j} className="relative pl-5 leading-relaxed">
-              <span className="absolute left-0 top-[0.7em] h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-primary/60" />
-              {r}
-            </li>
-          ))}
-        </ul>
       </motion.div>
     </div>
   );
