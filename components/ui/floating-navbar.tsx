@@ -133,6 +133,9 @@ export const FloatingNav = ({
                     {navItem.name}
                   </a>
                 ))}
+                <div className="mt-1 border-t border-border pt-2">
+                  <ThemeToggle />
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
