@@ -5,6 +5,9 @@ import AboutSection from "../components/sections/AboutSection";
 import SkillsSection from "../components/sections/SkillsSection";
 import FeaturedProjectSection from "../components/sections/FeaturedProjectSection";
 import ProjectsSection from "../components/sections/ProjectsSection";
+import WorkSection from "../components/sections/WorkSection";
+import EducationSection from "../components/sections/EducationSection";
+import ContactSection from "../components/sections/ContactSection";
 
 const navItems = [
   { name: "Home", link: "#home" },
@@ -25,6 +28,9 @@ export default function Home() {
       <SkillsSection />
       <FeaturedProjectSection />
       <ProjectsSection />
+      <WorkSection />
+      <EducationSection />
+      <ContactSection />
     </main>
   );
 }
