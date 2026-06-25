@@ -1,6 +1,7 @@
 import { FloatingNav } from "../components/ui/floating-navbar";
 import HeroSection from "../components/sections/HeroSection";
 import StatsSection from "../components/sections/StatsSection";
+import AboutSection from "../components/sections/AboutSection";
 
 const navItems = [
   { name: "Home", link: "#home" },
@@ -17,6 +18,7 @@ export default function Home() {
       <FloatingNav navItems={navItems} />
       <HeroSection />
       <StatsSection />
+      <AboutSection />
     </main>
   );
 }
