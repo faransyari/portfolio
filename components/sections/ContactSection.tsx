@@ -5,7 +5,8 @@ import { PORTFOLIO_INFO } from "@/config/portfolio-info";
 export default function ContactSection() {
   return (
     <>
-      <Section id="contact" className="text-center">
+      <Section id="contact" className="relative overflow-hidden text-center">
+        <div className="animate-spotlight pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[50vh] w-[50vh] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/15 blur-[120px]" />
         <Reveal>
           <h2 className="mx-auto max-w-3xl text-4xl font-semibold tracking-tight md:text-6xl">
             Let's work together.

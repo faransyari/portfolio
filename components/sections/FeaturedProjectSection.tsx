@@ -6,6 +6,20 @@ import { useReducedMotion } from "../hooks/useReducedMotion";
 
 export const FEATURED_PROJECT_NAME = "Collectiv";
 
+function Tilt({ children, className }: { children: React.ReactNode; className?: string }) {
+  const reduced = useReducedMotion();
+  if (reduced) return <div className={className}>{children}</div>;
+  return (
+    <motion.div
+      className={className}
+      style={{ transformPerspective: 1000 }}
+      whileHover={{ rotateX: 3, rotateY: -3, transition: { type: "spring", stiffness: 200, damping: 20 } }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 export default function FeaturedProjectSection() {
   const ref = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
@@ -21,23 +35,25 @@ export default function FeaturedProjectSection() {
     <section className="relative" ref={ref} style={{ height: reduced ? "auto" : "200vh" }}>
       <div className={reduced ? "px-6 py-28" : "sticky top-0 flex min-h-screen items-center px-6"}>
         <div className="mx-auto grid w-full max-w-[1120px] items-center gap-12 md:grid-cols-2">
-          <motion.div
-            style={reduced ? undefined : { scale: mediaScale }}
-            className="relative aspect-video overflow-hidden rounded-[22px] border border-border bg-card"
-          >
-            {p.video ? (
-              <iframe
-                src={p.video}
-                title={p.name}
-                allow="autoplay; encrypted-media; picture-in-picture"
-                className="absolute inset-0 h-full w-full"
-                allowFullScreen
-              />
-            ) : (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={p.image!} alt={p.name} className="absolute inset-0 h-full w-full object-cover" />
-            )}
-          </motion.div>
+          <Tilt>
+            <motion.div
+              style={reduced ? undefined : { scale: mediaScale }}
+              className="card-hover relative aspect-video overflow-hidden rounded-[22px] border border-border bg-card shadow-[var(--shadow-md)]"
+            >
+              {p.video ? (
+                <iframe
+                  src={p.video}
+                  title={p.name}
+                  allow="autoplay; encrypted-media; picture-in-picture"
+                  className="absolute inset-0 h-full w-full"
+                  allowFullScreen
+                />
+              ) : (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={p.image!} alt={p.name} className="absolute inset-0 h-full w-full object-cover" />
+              )}
+            </motion.div>
+          </Tilt>
           <motion.div style={reduced ? undefined : { y: textY, opacity: textOpacity }}>
             <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">Featured Project</p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">{p.name}</h2>

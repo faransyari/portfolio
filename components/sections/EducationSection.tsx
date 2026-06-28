@@ -12,7 +12,7 @@ export default function EducationSection() {
       <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
         {PORTFOLIO_INFO.education.map((edu, i) => (
           <Reveal key={edu.institution} delay={i * 0.08}>
-            <div className="h-full rounded-[22px] border border-border bg-card p-7">
+            <div className="card-surface card-hover h-full rounded-[22px] p-7">
               <p className="text-sm text-muted-foreground">{edu.year}</p>
               <h3 className="mt-2 text-xl font-semibold tracking-tight">{edu.degree}</h3>
               <p className="mt-1 text-primary">{edu.institution}</p>
