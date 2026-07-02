@@ -1,27 +1,15 @@
 "use client";
 import { motion } from "framer-motion";
-import { useReducedMotion } from "../hooks/useReducedMotion";
+import { fadeUp } from "@/lib/motion";
 
-const EASE = [0.16, 1, 0.3, 1] as const;
-
-export function Reveal({
-  children,
-  delay = 0,
-  className,
-}: {
-  children: React.ReactNode;
-  delay?: number;
-  className?: string;
-}) {
-  const reduced = useReducedMotion();
-  if (reduced) return <div className={className}>{children}</div>;
+export default function Reveal({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial="hidden"
+      whileInView="show"
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.7, ease: EASE, delay }}
+      variants={{ hidden: fadeUp.hidden, show: { ...fadeUp.show, transition: { ...fadeUp.show.transition, delay } } }}
     >
       {children}
     </motion.div>
