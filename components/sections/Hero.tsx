@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import { profile } from "@/content/portfolio";
@@ -22,7 +23,7 @@ export default function Hero() {
         </Reveal>
         <Reveal delay={0.15}>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a href="/#work" className="rounded-full bg-fg px-5 py-2.5 text-sm font-medium text-bg transition-opacity hover:opacity-90">View work</a>
+            <Link href="/#work" className="rounded-full bg-fg px-5 py-2.5 text-sm font-medium text-bg transition-opacity hover:opacity-90">View work</Link>
             <a href={`mailto:${profile.email}`} className="rounded-full border border-line px-5 py-2.5 text-sm font-medium transition-colors hover:bg-card">Get in touch</a>
           </div>
         </Reveal>
