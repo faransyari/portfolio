@@ -5,6 +5,9 @@ import { THEME_SCRIPT } from "../components/theme/theme-script";
 import { ThemeProvider } from "../components/theme/ThemeProvider";
 import CommandPalette from "@/components/chrome/CommandPalette";
 import { profile } from "@/content/portfolio";
+import { ViewTransitions } from "next-view-transitions";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const sans = Geist({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
 const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
@@ -27,29 +30,33 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${sans.variable} ${mono.variable}`} suppressHydrationWarning>
-      <head><script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} /></head>
-      <body className="font-sans antialiased">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: profile.name,
-              jobTitle: profile.role,
-              email: `mailto:${profile.email}`,
-              url: profile.website,
-              sameAs: [profile.github, profile.linkedIn],
-              address: { "@type": "PostalAddress", addressLocality: profile.location },
-            }),
-          }}
-        />
-        <ThemeProvider>
-          {children}
-          <CommandPalette />
-        </ThemeProvider>
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang="en" className={`${sans.variable} ${mono.variable}`} suppressHydrationWarning>
+        <head><script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} /></head>
+        <body className="font-sans antialiased">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Person",
+                name: profile.name,
+                jobTitle: profile.role,
+                email: `mailto:${profile.email}`,
+                url: profile.website,
+                sameAs: [profile.github, profile.linkedIn],
+                address: { "@type": "PostalAddress", addressLocality: profile.location },
+              }),
+            }}
+          />
+          <ThemeProvider>
+            {children}
+            <CommandPalette />
+          </ThemeProvider>
+          <Analytics />
+          <SpeedInsights />
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }

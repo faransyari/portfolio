@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import Image from "next/image";
 import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
@@ -16,7 +16,7 @@ export default function WorkRow({ project, index }: { project: Project; index: n
     >
       <span className="font-mono text-xs text-muted">{String(index + 1).padStart(2, "0")}</span>
       <div className="min-w-0">
-        <h3 className="truncate text-2xl font-medium tracking-tight transition-opacity group-hover:opacity-60 sm:text-3xl">{project.name}</h3>
+        <h3 className="truncate text-2xl font-medium tracking-tight transition-opacity group-hover:opacity-60 sm:text-3xl" style={{ viewTransitionName: `project-${project.slug}` }}>{project.name}</h3>
         <p className="mt-1 font-mono text-xs text-muted">{project.technologies.join(" · ")} · {project.year}</p>
       </div>
       <ArrowUpRight size={20} className="text-muted transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-fg" />
