@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "next-view-transitions";
 import Container from "@/components/ui/Container";
 import ThemeToggle from "@/components/theme/ThemeToggle";
+import MobileMenu from "@/components/chrome/MobileMenu";
 import { profile } from "@/content/portfolio";
 import { cn } from "@/lib/utils";
 
@@ -40,6 +41,7 @@ export default function Nav() {
           </button>
           <a href={profile.resume} target="_blank" rel="noreferrer" className="hidden text-sm text-muted transition-colors hover:text-fg sm:inline">Résumé</a>
           <ThemeToggle />
+          <MobileMenu links={links} />
         </div>
       </Container>
     </header>
