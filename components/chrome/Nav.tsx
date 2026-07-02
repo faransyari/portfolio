@@ -31,6 +31,13 @@ export default function Nav() {
           ))}
         </nav>
         <div className="flex items-center gap-3">
+          <button
+            onClick={() => window.dispatchEvent(new Event("open-command-palette"))}
+            className="hidden items-center gap-1.5 rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted transition-colors hover:text-fg sm:flex"
+            aria-label="Open command palette"
+          >
+            ⌘K
+          </button>
           <a href={profile.resume} target="_blank" rel="noreferrer" className="hidden text-sm text-muted transition-colors hover:text-fg sm:inline">Résumé</a>
           <ThemeToggle />
         </div>

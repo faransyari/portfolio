@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../styles/globals.css";
 import { THEME_SCRIPT } from "../components/theme/theme-script";
 import { ThemeProvider } from "../components/theme/ThemeProvider";
+import CommandPalette from "@/components/chrome/CommandPalette";
 import { profile } from "@/content/portfolio";
 
 const sans = Geist({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
@@ -44,7 +45,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }),
           }}
         />
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          {children}
+          <CommandPalette />
+        </ThemeProvider>
       </body>
     </html>
   );
